@@ -1,22 +1,17 @@
 import { Box, Button, Heading, Text } from "@chakra-ui/react"
-import { TypeAnimation } from "react-type-animation"
-import React from "react"
+import React, { lazy, Suspense } from "react"
 import PowerIcon from "../components/PowerIcon"
 import "../styles.css"
+import { isSSR } from "../utils"
 
 const height = 600
 const titleBoxWidth = 316
 
+const TypedTag = lazy(() => import("../components/TypedTag"))
+
 export default function WelcomeSection() {
   return (
-    <Box
-      overflow="hidden"
-      position="relative"
-      height={height}
-      //   display="flex"
-      alignItems="center"
-      justifyContent="center"
-    >
+    <Box overflow="hidden" position="relative" height={height}>
       <Box
         height={height}
         overflow="hidden"
@@ -38,13 +33,15 @@ export default function WelcomeSection() {
             Grant Lonie
           </Heading>
         </Box>
-        <TypeAnimation
-          sequence={tagSequence}
-          wrapper="div"
-          cursor={true}
-          repeat={Infinity}
-          style={{ color: "white", fontSize: "1.2em" }}
-        />
+
+        {isSSR ? (
+          <StaticTag />
+        ) : (
+          <Suspense>
+            <TypedTag />
+          </Suspense>
+        )}
+
         <Box display="flex" justifyContent="center" mt={4}>
           <Button color="white" variant="outline">
             Reach out 👋
@@ -55,13 +52,8 @@ export default function WelcomeSection() {
   )
 }
 
-const tagSequence = [
-  "Freelance web stack technologist",
-  2000,
-  "Freelance web application guru",
-  2000,
-  "Admirable multi-platform architect",
-  2000,
-  "Admirable husband and father",
-  2000,
-]
+const StaticTag = () => (
+  <Text color="white" fontSize="1.2em">
+    Freelance web stack technologist
+  </Text>
+)
