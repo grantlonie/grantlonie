@@ -15,3 +15,12 @@ export default function Home() {
     </Box>
   )
 }
+
+export function Head() {
+  return (
+    <>
+      <title>Grant Lonie</title>
+      <meta name="description" content="Freelance site for Grant Lonie" />
+    </>
+  )
+}
