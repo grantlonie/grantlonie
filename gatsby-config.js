@@ -1,4 +1,10 @@
 module.exports = {
+  siteMetadata: {
+    title: `Grant Lonie`,
+    description: `Freelance site for Grant Lonie`,
+    image: `/icon.png`,
+    siteUrl: `https://www.grantlonie.me`,
+  },
   plugins: [
     {
       resolve: "@chakra-ui/gatsby-plugin",
@@ -10,7 +16,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-manifest",
       options: {
-        icon: "src/assets/icon.png",
+        icon: "static/icon.png",
       },
     },
   ],
