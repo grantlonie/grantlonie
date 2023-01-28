@@ -1,43 +1,47 @@
-import { Box, Container } from "@chakra-ui/react"
-import React from "react"
-import { AboutSection, ContactSection, OfferingsSection, WelcomeSection } from "../sections"
-import PortfolioSection from "../sections/PortfolioSection"
-import theme from "../utils/theme"
+import { Box, Container } from '@chakra-ui/react'
+import React from 'react'
+import { AboutSection, ContactSection, OfferingsSection, WelcomeSection } from '../sections'
+import PortfolioSection from '../sections/PortfolioSection'
 
 export default function Home() {
   return (
-    <Box height="100%" sx={{ background: theme.background, overflow: "hidden" }}>
+    <Box sx={{ background: '#FBF0D6', height: '100%', overflow: 'hidden' }}>
       <WelcomeSection />
 
-      <Container sx={{ maxW: "5xl", mt: "200px" }}>
+      <Container sx={{ color: 'black', maxW: '5xl', mt: '200px' }}>
         <OfferingsSection />
       </Container>
 
-      <Container sx={{ maxW: "5xl", mt: "200px" }}>
+      <Container sx={{ color: 'black', maxW: '5xl', mt: '200px' }}>
         <PortfolioSection />
       </Container>
 
       <Box
-        sx={{ mt: "200px", color: "white", pb: "200px", ml: `-${leftAdj}px` }}
-        overflow="hidden"
-        bgGradient="radial(rgba(0,100,183,1) 0%, rgba(0,145,234,1) 80%, rgba(100,193,255,1) 100%)"
-        width="140%"
-        position="relative"
-        transform="rotate(355deg)"
-        transformOrigin="center"
+        sx={{
+          bgGradient: 'radial(rgba(0,100,183,1) 0%, rgba(0,145,234,1) 80%, rgba(100,193,255,1) 100%)',
+          color: 'white',
+          ml: `-${leftAdj}px`,
+          mt: '200px',
+          overflow: 'hidden',
+          pb: '200px',
+          position: 'relative',
+          transform: 'rotate(355deg)',
+          transformOrigin: 'center',
+          width: `${widthPercent}%`,
+        }}
       >
         <Box
           sx={{
-            transform: "rotate(5deg)",
-            transformOrigin: "center",
+            transform: 'rotate(5deg)',
+            transformOrigin: 'center',
             ml: `${leftAdj}px`,
-            width: "100vw",
+            width: `${10000 / widthPercent}%`,
           }}
         >
-          <Container sx={{ maxW: "5xl", mt: "200px" }}>
+          <Container sx={{ maxW: '5xl', mt: '200px' }}>
             <AboutSection />
           </Container>
-          <Container sx={{ maxW: "5xl", mt: "200px" }}>
+          <Container sx={{ maxW: '5xl', mt: '200px' }}>
             <ContactSection />
           </Container>
         </Box>
@@ -47,3 +51,4 @@ export default function Home() {
 }
 
 const leftAdj = 70
+const widthPercent = 140

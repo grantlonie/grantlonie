@@ -1,5 +1,5 @@
-import { Box, Text } from "@chakra-ui/react"
-import React from "react"
+import { Box, Text } from '@chakra-ui/react'
+import React from 'react'
 
 export interface PortfolioItem {
   title: string
@@ -10,7 +10,7 @@ export interface PortfolioItem {
 
 export const portfolioItems: PortfolioItem[] = [
   {
-    title: "Bombdoor",
+    title: 'Bombdoor',
     description: (
       <Box>
         <Text>Business-to-business rental and leasing platform</Text>
@@ -20,7 +20,7 @@ export const portfolioItems: PortfolioItem[] = [
         </Text>
       </Box>
     ),
-    imageUrl: "https://storage.cloud.google.com/grantlonie-public/showcase/bombdoor.png",
-    videoUrl: "https://storage.cloud.google.com/grantlonie-public/showcase/bombdoor.mp4",
+    imageUrl: 'https://storage.cloud.google.com/grantlonie-public/showcase/bombdoor.png',
+    videoUrl: 'https://storage.cloud.google.com/grantlonie-public/showcase/bombdoor.mp4',
   },
 ]

@@ -1,10 +1,10 @@
-import { Box, Heading } from "@chakra-ui/react"
-import React, { lazy, Suspense, useRef, useState } from "react"
-import { PortfolioItem as PortfolioItemProps } from "../portfolioItems"
-import useHover from "../utils/useHover"
-import PlayOutlined from "./icons/PlayOutlined"
+import { Box, Heading } from '@chakra-ui/react'
+import React, { lazy, Suspense, useRef, useState } from 'react'
+import { PortfolioItem as PortfolioItemProps } from '../portfolioItems'
+import useHover from '../utils/useHover'
+import PlayOutlined from './icons/PlayOutlined'
 
-const VideoPlayer = lazy(() => import("./VideoPlayer"))
+const VideoPlayer = lazy(() => import('./VideoPlayer'))
 
 interface Props {
   item: PortfolioItemProps
@@ -23,17 +23,17 @@ export default function PortfolioItem({ item }: Props) {
     <Box
       ref={ref}
       sx={{
-        background: "white",
-        border: "1px solid black",
-        borderRadius: "8px",
-        overflow: "hidden",
-        cursor: "pointer",
-        display: "grid",
-        gridTemplateColumns: { base: "auto", lg: "450px auto" },
-        boxShadow: "md",
-        transformOrigin: "50% 50%",
-        transition: "all 300ms ease",
-        ...((hovering || playing) && { transform: { lg: "scale(1.1)" } }),
+        background: 'white',
+        border: '1px solid black',
+        borderRadius: '8px',
+        boxShadow: 'md',
+        cursor: 'pointer',
+        display: 'grid',
+        gridTemplateColumns: { base: 'auto', lg: '450px auto' },
+        overflow: 'hidden',
+        transformOrigin: '50% 50%',
+        transition: 'all 300ms ease',
+        ...((hovering || playing) && { transform: { lg: 'scale(1.1)' } }),
       }}
       onClick={() => setPlaying(true)}
     >

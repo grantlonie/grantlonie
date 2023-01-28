@@ -1,7 +1,6 @@
-import { Box, Container, Heading, Image, List, ListIcon, ListItem } from "@chakra-ui/react"
-import React from "react"
-import { Chart, Compass, Devices, LightBulb } from "../components/icons"
-import theme from "../utils/theme"
+import { Box, Container, Heading, Image, List, ListIcon, ListItem } from '@chakra-ui/react'
+import React from 'react'
+import { Chart, Compass, Devices, LightBulb } from '../components/icons'
 
 export default function OfferingsSection() {
   return (
@@ -9,7 +8,7 @@ export default function OfferingsSection() {
       <Heading mb={8}>Let me help you...</Heading>
 
       <Container maxW="3xl">
-        <Box sx={{ display: "grid", gridTemplateColumns: { md: "200px auto" }, gap: 4 }}>
+        <Box sx={{ display: 'grid', gridTemplateColumns: { md: '200px auto' }, gap: 4 }}>
           <Image src="/waiter.png" alt="Server" />
           <List spacing={5}>
             <Item Icon={Compass}>navigate complex business processes</Item>
@@ -25,8 +24,8 @@ export default function OfferingsSection() {
 
 function Item({ children, Icon }) {
   return (
-    <ListItem sx={{ fontSize: { md: "2xl" } }}>
-      <ListIcon as={Icon} sx={{ color: theme.primary.main, fontSize: { base: "2xl", md: "4xl" } }} />
+    <ListItem sx={{ fontSize: { md: '2xl' } }}>
+      <ListIcon as={Icon} sx={{ color: 'primary', fontSize: { base: '2xl', md: '4xl' } }} />
       {children}
     </ListItem>
   )

@@ -1,13 +1,13 @@
-import { Box, Button, Heading, Text } from "@chakra-ui/react"
-import React, { lazy, Suspense } from "react"
-import PowerIcon from "../components/PowerIcon"
-import "../styles.css"
-import { isSSR } from "../utils"
+import { Box, Button, Heading, Text } from '@chakra-ui/react'
+import React, { lazy, Suspense } from 'react'
+import PowerIcon from '../components/PowerIcon'
+import '../styles.css'
+import { isSSR } from '../utils'
 
 const height = 600
 const titleBoxWidth = 316
 
-const TypedTag = lazy(() => import("../components/TypedTag"))
+const TypedTag = lazy(() => import('../components/TypedTag'))
 
 export default function WelcomeSection() {
   return (
@@ -27,9 +27,17 @@ export default function WelcomeSection() {
           ))}
         </ul>
       </Box>
-      <Box position="absolute" left={`calc(50% - ${titleBoxWidth / 2}px)`} top={250} width={titleBoxWidth}>
+      <Box
+        sx={{
+          position: 'absolute',
+          left: `calc(50% - ${titleBoxWidth / 2}px)`,
+          top: 250,
+          width: titleBoxWidth,
+          color: 'white',
+        }}
+      >
         <Box display="flex" justifyContent="center" mb={2}>
-          <Heading as="h1" size="2xl" color="white">
+          <Heading as="h1" size="2xl">
             Grant Lonie
           </Heading>
         </Box>
@@ -43,7 +51,7 @@ export default function WelcomeSection() {
         )}
 
         <Box display="flex" justifyContent="center" mt={4}>
-          <Button color="white" variant="outline" onClick={handleGoToContact}>
+          <Button variant="outline" onClick={handleGoToContact}>
             Reach out 👋
           </Button>
         </Box>
@@ -52,12 +60,8 @@ export default function WelcomeSection() {
   )
 }
 
-const StaticTag = () => (
-  <Text color="white" fontSize="1.2em">
-    Freelance web stack technologist
-  </Text>
-)
+const StaticTag = () => <Text fontSize="1.2em">Freelance web stack technologist</Text>
 
 function handleGoToContact() {
-  window.scroll({ top: document.body.scrollHeight, behavior: "smooth" })
+  window.scroll({ top: document.body.scrollHeight, behavior: 'smooth' })
 }
