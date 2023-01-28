@@ -1,14 +1,12 @@
-import { Box, Container, Heading, Text } from "@chakra-ui/react"
+import { Heading, Text } from "@chakra-ui/react"
 import React from "react"
 import PortfolioItem from "../components/PortfolioItem"
 import { portfolioItems } from "../portfolioItems"
 
 export default function PortfolioSection() {
   return (
-    <Container maxW="5xl">
-      <Heading mt={10} mb={4}>
-        Portfolio
-      </Heading>
+    <>
+      <Heading mb={4}>Portfolio</Heading>
 
       <Text fontSize="lg">The proof is in the pudding!</Text>
       <Text mb={5}>Sometimes you have to see it to believe it. Grab a coffee, get cozy, and dive in.</Text>
@@ -16,6 +14,6 @@ export default function PortfolioSection() {
       {portfolioItems.map((p) => (
         <PortfolioItem key={p.title} item={p} />
       ))}
-    </Container>
+    </>
   )
 }

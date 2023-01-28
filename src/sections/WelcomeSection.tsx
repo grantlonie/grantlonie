@@ -43,7 +43,7 @@ export default function WelcomeSection() {
         )}
 
         <Box display="flex" justifyContent="center" mt={4}>
-          <Button color="white" variant="outline">
+          <Button color="white" variant="outline" onClick={handleGoToContact}>
             Reach out 👋
           </Button>
         </Box>
@@ -57,3 +57,7 @@ const StaticTag = () => (
     Freelance web stack technologist
   </Text>
 )
+
+function handleGoToContact() {
+  window.scroll({ top: document.body.scrollHeight, behavior: "smooth" })
+}
