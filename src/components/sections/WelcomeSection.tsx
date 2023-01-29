@@ -1,13 +1,13 @@
 import { Box, Button, Heading, Text } from '@chakra-ui/react'
 import React, { lazy, Suspense } from 'react'
-import PowerIcon from '../components/PowerIcon'
-import '../styles.css'
-import { isSSR } from '../utils'
+import PowerIcon from '../PowerIcon'
+import '../../styles.css'
+import { isSSR } from '../../utils'
 
 const height = 600
 const titleBoxWidth = 316
 
-const TypedTag = lazy(() => import('../components/TypedTag'))
+const TypedTag = lazy(() => import('../TypedTag'))
 
 export default function WelcomeSection() {
   return (
@@ -22,8 +22,8 @@ export default function WelcomeSection() {
         transformOrigin="bottom left"
       >
         <ul className="circles">
-          {new Array(10).fill(0).map(() => (
-            <PowerIcon />
+          {new Array(10).fill(0).map((_, i) => (
+            <PowerIcon key={i} />
           ))}
         </ul>
       </Box>

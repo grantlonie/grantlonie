@@ -1,7 +1,12 @@
 import { Box, Container } from '@chakra-ui/react'
 import React from 'react'
-import { AboutSection, ContactSection, OfferingsSection, WelcomeSection } from '../sections'
-import PortfolioSection from '../sections/PortfolioSection'
+import {
+  AboutSection,
+  ContactSection,
+  OfferingsSection,
+  PortfolioSection,
+  WelcomeSection,
+} from '../components/sections'
 
 export default function Home() {
   return (
