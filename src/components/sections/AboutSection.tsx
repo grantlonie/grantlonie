@@ -2,6 +2,7 @@ import {
   Box,
   Divider,
   Heading,
+  Image,
   List,
   ListItem,
   Tab,
@@ -9,10 +10,13 @@ import {
   TabPanel,
   TabPanels,
   Tabs,
+  Tag,
   Text,
   UnorderedList,
+  VStack,
 } from '@chakra-ui/react'
 import React from 'react'
+import TechnologyIcon, { technologies } from '../TechnologyIcon'
 
 export default function AboutSection() {
   return (
@@ -20,7 +24,7 @@ export default function AboutSection() {
       <Heading>About</Heading>
 
       <Tabs>
-        <TabList mb="1em">
+        <TabList sx={{ border: 0 }}>
           {tabs.map(({ title }) => (
             <Tab key={title} _selected={{ color: 'primary' }}>
               {title}
@@ -30,7 +34,16 @@ export default function AboutSection() {
 
         <TabPanels>
           {tabs.map(({ Component, title }) => (
-            <TabPanel key={title}>
+            <TabPanel
+              key={title}
+              sx={{
+                backgroundColor: 'background',
+                boxShadow: 'inset 0px 0px 3px 3px rgba(0,0,0,0.49)',
+                color: 'black',
+                height: '350px',
+                padding: 0,
+              }}
+            >
               <Component />
             </TabPanel>
           ))}
@@ -62,22 +75,39 @@ const tabs: TabProps[] = [
 
 function Professional() {
   return (
-    <Box sx={{ display: 'flex', gap: 4 }}>
-      <Box>
-        <Heading as="h2" size="lg">
+    <Box sx={{ display: 'grid', gridTemplateColumns: '277px auto auto', height: '100%', overflow: 'hidden' }}>
+      <Box sx={{ p: 4 }}>
+        <Heading as="h2" size="md" sx={{ mb: 2 }}>
           Industry Knowledge
         </Heading>
-        <List>
-          <ListItem sx={{ whiteSpace: 'nowrap', fontSize: 'lg', mt: 2 }}>Heavy manufacturing</ListItem>
-          <ListItem sx={{ whiteSpace: 'nowrap', fontSize: 'lg', mt: 2 }}>Finance technology</ListItem>
-          <ListItem sx={{ whiteSpace: 'nowrap', fontSize: 'lg', mt: 2 }}>Supply chain consulting</ListItem>
-          <ListItem sx={{ whiteSpace: 'nowrap', fontSize: 'lg', mt: 2 }}>Product development & testing</ListItem>
-        </List>
+        <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 2 }}>
+          <Tag size="md" sx={{ alignSelf: 'start', background: 'primary', color: 'white', py: 0.5, width: '110px' }}>
+            Heavy manufacturing
+          </Tag>
+          <Tag size="md" sx={{ alignSelf: 'start', background: 'primary', color: 'white', py: 0.5, width: '86px' }}>
+            Finance technology
+          </Tag>
+          <Tag size="md" sx={{ alignSelf: 'start', background: 'primary', color: 'white', py: 0.5, width: '103px' }}>
+            Supply chain consulting
+          </Tag>
+          <Tag size="md" sx={{ alignSelf: 'start', background: 'primary', color: 'white', py: 0.5, width: '132px' }}>
+            Product research & development
+          </Tag>
+        </Box>
+
+        <Heading as="h2" size="md" sx={{ mt: 4, mb: 2 }}>
+          Technologies
+        </Heading>
+        <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 4 }}>
+          {technologies.map((t) => (
+            <TechnologyIcon key={t} value={t} />
+          ))}
+        </Box>
       </Box>
 
-      <Box sx={{ width: '3px', background: 'white' }} />
+      <Box sx={{ width: '1px', background: 'black' }} />
 
-      <Box>
+      <Box sx={{ overflow: 'auto', p: 4 }}>
         <Text mb={2}>
           Driven by curiosity, I have danced around to various professions. I completed my degree in Mechanical
           Engineering focusing on dynamic systems and advanced computer algorithms. I started my career in engine
@@ -114,7 +144,37 @@ function Professional() {
 }
 
 function Personal() {
-  return <Box>details..</Box>
+  return (
+    <Box sx={{ display: 'flex', height: '100%', overflow: 'hidden' }}>
+      <Box sx={{ p: 4, paddingRight: 0, display: 'flex', overflow: 'hidden', flexShrink: 0 }}>
+        <Image src="/family.png" alt="family picture" />
+      </Box>
+      <Box sx={{ overflow: 'auto', p: 4 }}>
+        <Text mb={2}>
+          I grew up in Peoria, Illinois - a small city surrounded by rural farmland known for the phrase “Will it play
+          in Peoria”. My favorite past time activities include: skateboarding, disc golf and Smash Brothers.
+        </Text>
+        <Text mb={2}>
+          I went to Bradley, a local private university, followed up with a Christian mission trip. I lived for a few
+          years with friends who helped strengthen my faith while working my first couple jobs.
+        </Text>
+        <Text mb={2}>
+          One night, after a gathering with some friends, I gathered my courage and chased down the woman of my dreams
+          and swept her off her feet. After long distance engagement while she was living in California, Erica and I got
+          hitched and started our life together.
+        </Text>
+        <Text mb={2}>
+          Erica started working for Caterpillar right out of school, and she received a new position that relocated us
+          to bourbon capitol - Louisville, KY. After a few years and a few more friends we took off for her next
+          assignment in Alberta, Canada, where we live today.
+        </Text>
+        <Text mb={2}>
+          Erica and I love to travel and spend most evenings cooking and sipping wine or classic bourbon cocktails. We
+          have two kids - James is turning 1 and our feisty cat Misty.
+        </Text>
+      </Box>
+    </Box>
+  )
 }
 
 function Positional() {

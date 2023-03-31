@@ -10,7 +10,7 @@ import {
 
 export default function Home() {
   return (
-    <Box sx={{ background: '#FBF0D6', height: '100%', overflow: 'hidden' }}>
+    <Box sx={{ background: 'background', height: '100%', overflow: 'hidden' }}>
       <WelcomeSection />
 
       <Container sx={{ color: 'black', maxW: '5xl', mt: '200px' }}>
