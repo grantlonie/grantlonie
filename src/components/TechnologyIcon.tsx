@@ -23,7 +23,16 @@ export default function TechnologyIcon({ value }: Props) {
 
 type Technology = 'react' | 'python' | 'cpp' | 'c#' | 'ts' | 'gatsby' | 'node' | 'next'
 
-export const technologies: Technology[] = ['ts', 'node', 'python', 'cpp', 'c#', 'react', 'next', 'gatsby']
+export const technologies: Technology[] = [
+  'ts',
+  'node',
+  'python',
+  'cpp',
+  'c#',
+  'react',
+  'next',
+  'gatsby',
+]
 
 interface TechnologyOption {
   description: string

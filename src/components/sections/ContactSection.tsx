@@ -15,7 +15,12 @@ export default function ContactSection() {
         <Box sx={{ display: 'grid', gap: 2, gridTemplateColumns: { md: '1fr 1fr' }, mb: 2 }}>
           <FormControl>
             <FormLabel>Email address</FormLabel>
-            <Input type="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+            <Input
+              type="email"
+              name="email"
+              value={email}
+              onChange={e => setEmail(e.target.value)}
+            />
           </FormControl>
           <FormControl>
             <FormLabel>Name</FormLabel>
@@ -38,7 +43,7 @@ export default function ContactSection() {
   )
 }
 
-const validateEmail = (email) =>
+const validateEmail = email =>
   String(email)
     .toLowerCase()
     .match(

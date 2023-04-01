@@ -14,8 +14,9 @@ export const portfolioItems: PortfolioItem[] = [
       <Box>
         <Text>Business-to-business rental and leasing platform</Text>
         <Text>
-          As startup CTO, I worked with the other founders to develop a high-performance, SEO marketplace where vendors
-          would make their equipment available for rent by other client businesses
+          As startup CTO, I worked with the other founders to develop a high-performance, SEO
+          marketplace where vendors would make their equipment available for rent by other client
+          businesses
         </Text>
       </Box>
     ),

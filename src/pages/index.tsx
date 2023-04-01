@@ -22,7 +22,8 @@ export default function Home() {
 
       <Box
         sx={{
-          bgGradient: 'radial(rgba(0,100,183,1) 0%, rgba(0,145,234,1) 80%, rgba(100,193,255,1) 100%)',
+          bgGradient:
+            'radial(rgba(0,100,183,1) 0%, rgba(0,145,234,1) 80%, rgba(100,193,255,1) 100%)',
           color: 'white',
           ml: `-${leftAdj}px`,
           mt: '200px',

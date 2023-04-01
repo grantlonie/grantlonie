@@ -28,8 +28,7 @@ export default function AboutSection() {
       <Heading mb={4}>About</Heading>
       <Text fontSize="lg">Still not convinced!</Text>
       <Text mb={5}>
-        Let me tell you my story - the crazy career turns I've taken and my amazing
-        family.
+        Let me tell you my story - the crazy career turns I've taken and my amazing family.
       </Text>
       <DesktopTabs />
       <MobileModals />
@@ -92,9 +91,7 @@ function MobileModals() {
         <ModalContent>
           <ModalHeader>{value}</ModalHeader>
           <ModalCloseButton />
-          <ModalBody>
-            {value === 'Professional' ? <Professional /> : <Personal />}
-          </ModalBody>
+          <ModalBody>{value === 'Professional' ? <Professional /> : <Personal />}</ModalBody>
         </ModalContent>
       </Modal>
     </Box>
@@ -212,44 +209,40 @@ function Professional() {
 
       <Box sx={{ overflow: 'auto', py: 4, px: { base: null, md: 4 } }}>
         <Text mb={2}>
-          Driven by curiosity, I have danced around to various professions. I completed my
-          degree in Mechanical Engineering focusing on dynamic systems and advanced
-          computer algorithms. I started my career in engine validation collecting and
-          analyzing data. Desiring to get away from the grease, I pursued a path in
-          business and supply chain consulting, where I created and visualized large
-          databases and crafted fancy presentations. Tired of the go go, I repositioned
-          myself in product design and development managing timelines and teams for heavy
-          manufacturing electronics.
+          Driven by curiosity, I have danced around to various professions. I completed my degree in
+          Mechanical Engineering focusing on dynamic systems and advanced computer algorithms. I
+          started my career in engine validation collecting and analyzing data. Desiring to get away
+          from the grease, I pursued a path in business and supply chain consulting, where I created
+          and visualized large databases and crafted fancy presentations. Tired of the go go, I
+          repositioned myself in product design and development managing timelines and teams for
+          heavy manufacturing electronics.
         </Text>
         <Text mb={2}>
-          Bringing my industry knowledge and algo-analytical skills together, I launched a
-          full on attack in user application software development. The past 5 five years
-          has been a wild ride:
+          Bringing my industry knowledge and algo-analytical skills together, I launched a full on
+          attack in user application software development. The past 5 five years has been a wild
+          ride:
         </Text>
         <UnorderedList mb={2}>
           <ListItem>
-            developing Linux touchscreen vehicle applications while onboarding and
-            managing the team as the program scaled
+            developing Linux touchscreen vehicle applications while onboarding and managing the team
+            as the program scaled
           </ListItem>
           <ListItem>
-            building a CRM platform for colleagues to manage customer relations and
-            project growth
+            building a CRM platform for colleagues to manage customer relations and project growth
           </ListItem>
           <ListItem>
             bringing a fin-tech business-to-business equipment rental app to the market
           </ListItem>
           <ListItem>
-            architecting an advanced data visualization platform including: managing
-            visuals with deployment process and change tracking, designing the UI-agnostic
-            aggregation API, and developing a seamless drag and drop user widget and
-            dashboard editors.
+            architecting an advanced data visualization platform including: managing visuals with
+            deployment process and change tracking, designing the UI-agnostic aggregation API, and
+            developing a seamless drag and drop user widget and dashboard editors.
           </ListItem>
         </UnorderedList>
         <Text mb={2}>
-          I excel in everything JavaScript and have a special place in my heart for
-          universal JS apps. I love nerding out with advanced algorithms and strive to
-          turn complexity into beauty. I prefer the greenfield space helping customers
-          bring their dreams to life.
+          I excel in everything JavaScript and have a special place in my heart for universal JS
+          apps. I love nerding out with advanced algorithms and strive to turn complexity into
+          beauty. I prefer the greenfield space helping customers bring their dreams to life.
         </Text>
       </Box>
     </Box>
@@ -279,31 +272,28 @@ function Personal() {
       </Box>
       <Box sx={{ overflow: 'auto', p: { base: null, md: 4 } }}>
         <Text mb={2}>
-          I grew up in Peoria, Illinois - a small city surrounded by rural farmland known
-          for the phrase “Will it play in Peoria”. My favorite past time activities
-          include: skateboarding, disc golf and Smash Brothers.
+          I grew up in Peoria, Illinois - a small city surrounded by rural farmland known for the
+          phrase “Will it play in Peoria”. My favorite past time activities include: skateboarding,
+          disc golf and Smash Brothers.
         </Text>
         <Text mb={2}>
-          I went to Bradley, a local private university, followed up with a Christian
-          mission trip. I lived for a few years with friends who helped strengthen my
-          faith while working my first couple jobs.
+          I went to Bradley, a local private university, followed up with a Christian mission trip.
+          I lived for a few years with friends who helped strengthen my faith while working my first
+          couple jobs.
         </Text>
         <Text mb={2}>
-          One night, after a gathering with some friends, I gathered my courage and chased
-          down the woman of my dreams and swept her off her feet. After long distance
-          engagement while she was living in California, Erica and I got hitched and
-          started our life together.
+          One night, after a gathering with some friends, I gathered my courage and chased down the
+          woman of my dreams and swept her off her feet. After long distance engagement while she
+          was living in California, Erica and I got hitched and started our life together.
         </Text>
         <Text mb={2}>
-          Erica started working for Caterpillar right out of school, and she received a
-          new position that relocated us to bourbon capitol - Louisville, KY. After a few
-          years and a few more friends we took off for her next assignment in Alberta,
-          Canada, where we live today.
+          Erica started working for Caterpillar right out of school, and she received a new position
+          that relocated us to bourbon capitol - Louisville, KY. After a few years and a few more
+          friends we took off for her next assignment in Alberta, Canada, where we live today.
         </Text>
         <Text mb={2}>
-          Erica and I love to travel and spend most evenings cooking and sipping wine or
-          classic bourbon cocktails. We have two kids - James is turning 1 and our feisty
-          cat Misty.
+          Erica and I love to travel and spend most evenings cooking and sipping wine or classic
+          bourbon cocktails. We have two kids - James is turning 1 and our feisty cat Misty.
         </Text>
       </Box>
     </Box>
