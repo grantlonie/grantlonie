@@ -7,7 +7,7 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: "@chakra-ui/gatsby-plugin",
+      resolve: '@chakra-ui/gatsby-plugin',
       options: {
         resetCSS: true,
         isUsingColorMode: true,
@@ -15,10 +15,11 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-plugin-manifest",
+      resolve: 'gatsby-plugin-manifest',
       options: {
-        icon: "static/icon.png",
+        icon: 'static/icon.png',
       },
     },
+    'gatsby-plugin-provide-react',
   ],
 }

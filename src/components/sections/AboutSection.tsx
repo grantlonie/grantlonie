@@ -1,9 +1,7 @@
 import {
   Box,
-  Divider,
   Heading,
   Image,
-  List,
   ListItem,
   Tab,
   TabList,
@@ -13,9 +11,7 @@ import {
   Tag,
   Text,
   UnorderedList,
-  VStack,
 } from '@chakra-ui/react'
-import React from 'react'
 import TechnologyIcon, { technologies } from '../TechnologyIcon'
 
 export default function AboutSection() {
@@ -23,7 +19,7 @@ export default function AboutSection() {
     <>
       <Heading>About</Heading>
 
-      <Tabs>
+      <Tabs isLazy lazyBehavior="keepMounted">
         <TabList sx={{ border: 0 }}>
           {tabs.map(({ title }) => (
             <Tab key={title} _selected={{ color: 'primary' }}>

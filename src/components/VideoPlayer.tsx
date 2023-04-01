@@ -1,4 +1,3 @@
-import React from 'react'
 import ReactPlayer, { ReactPlayerProps } from 'react-player'
 
 export default function VideoPlayer(props: ReactPlayerProps) {

@@ -1,5 +1,4 @@
 import { Box, Image, Text, Tooltip } from '@chakra-ui/react'
-import React from 'react'
 
 interface Props {
   value: Technology

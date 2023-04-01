@@ -1,5 +1,4 @@
-import { Box, Button, Container, Heading, Image, Text } from '@chakra-ui/react'
-import React from 'react'
+import { Box, Button, Heading, Image, Text } from '@chakra-ui/react'
 
 export default function _404Page() {
   return (

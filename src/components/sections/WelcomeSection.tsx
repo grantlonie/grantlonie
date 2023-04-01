@@ -1,8 +1,8 @@
 import { Box, Button, Heading, Text } from '@chakra-ui/react'
-import React, { lazy, Suspense } from 'react'
-import PowerIcon from '../PowerIcon'
+import { lazy, Suspense } from 'react'
 import '../../styles.css'
 import { isSSR } from '../../utils'
+import PowerIcon from '../PowerIcon'
 
 const height = 600
 const titleBoxWidth = 316

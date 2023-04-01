@@ -1,5 +1,4 @@
 import { Box, Button, FormControl, FormLabel, Heading, Input, Textarea } from '@chakra-ui/react'
-import React from 'react'
 
 const emailService = 'https://getform.io/f/c8a53674-04db-4c2f-bd81-bd6ed9378f63'
 

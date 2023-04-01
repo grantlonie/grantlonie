@@ -1,5 +1,4 @@
 import { Box, Container, Heading, Image, List, ListIcon, ListItem } from '@chakra-ui/react'
-import React from 'react'
 import { Chart, Compass, Devices, LightBulb } from '../icons'
 
 export default function OfferingsSection() {

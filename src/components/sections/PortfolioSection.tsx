@@ -1,7 +1,6 @@
 import { Heading, Text } from '@chakra-ui/react'
-import React from 'react'
-import PortfolioItem from '../PortfolioItem'
 import { portfolioItems } from '../../portfolioItems'
+import PortfolioItem from '../PortfolioItem'
 
 export default function PortfolioSection() {
   return (

@@ -1,5 +1,5 @@
 import { Box, Heading } from '@chakra-ui/react'
-import React, { lazy, Suspense, useRef, useState } from 'react'
+import { lazy, Suspense, useRef, useState } from 'react'
 import { PortfolioItem as PortfolioItemProps } from '../portfolioItems'
 import useHover from '../utils/useHover'
 import PlayOutlined from './icons/PlayOutlined'
