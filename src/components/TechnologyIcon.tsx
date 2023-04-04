@@ -21,7 +21,22 @@ export default function TechnologyIcon({ value }: Props) {
   )
 }
 
-type Technology = 'react' | 'python' | 'cpp' | 'c#' | 'ts' | 'gatsby' | 'node' | 'next'
+type Technology =
+  | 'angular'
+  | 'aws'
+  | 'cpp'
+  | 'c#'
+  | 'gatsby'
+  | 'gcp'
+  | 'linux'
+  | 'matlab'
+  | 'next'
+  | 'node'
+  | 'nosql'
+  | 'python'
+  | 'react'
+  | 'sql'
+  | 'ts'
 
 export const technologies: Technology[] = [
   'ts',
@@ -29,9 +44,16 @@ export const technologies: Technology[] = [
   'python',
   'cpp',
   'c#',
+  'matlab',
   'react',
+  'angular',
   'next',
   'gatsby',
+  'sql',
+  'nosql',
+  'gcp',
+  'aws',
+  'linux',
 ]
 
 interface TechnologyOption {
@@ -41,6 +63,16 @@ interface TechnologyOption {
 }
 
 const technologyOptionDictionary: { [key in Technology]: TechnologyOption } = {
+  angular: {
+    description: 'Javascript rendering library',
+    iconUrl: 'technology-icons/angular.png',
+    title: 'AngularJS',
+  },
+  aws: {
+    description: 'Cloud platform',
+    iconUrl: 'technology-icons/aws.png',
+    title: 'Amazon Web Services',
+  },
   cpp: {
     description: 'Lower level language for embedded applications',
     iconUrl: 'technology-icons/cpp.png',
@@ -56,6 +88,21 @@ const technologyOptionDictionary: { [key in Technology]: TechnologyOption } = {
     iconUrl: 'technology-icons/gatsby.png',
     title: 'Gatsby',
   },
+  gcp: {
+    description: 'Cloud platform',
+    iconUrl: 'technology-icons/gcp.png',
+    title: 'Google Cloud Platform',
+  },
+  linux: {
+    description: 'High security OS typically used by servers',
+    iconUrl: 'technology-icons/linux.png',
+    title: 'Linux',
+  },
+  matlab: {
+    description: 'Engineering numeric computing language',
+    iconUrl: 'technology-icons/matlab.png',
+    title: 'Matlab',
+  },
   next: {
     description: 'Universal Javascript React library',
     iconUrl: 'technology-icons/next.png',
@@ -66,6 +113,11 @@ const technologyOptionDictionary: { [key in Technology]: TechnologyOption } = {
     iconUrl: 'technology-icons/node.png',
     title: 'Node',
   },
+  nosql: {
+    description: 'Unstrutred databases (Mongo, Cosmos, Firestore, Dynamo)',
+    iconUrl: 'technology-icons/nosql.png',
+    title: 'Document DBs',
+  },
   python: {
     description: 'Interpretted language for automation and analytics',
     iconUrl: 'technology-icons/python.png',
@@ -75,6 +127,11 @@ const technologyOptionDictionary: { [key in Technology]: TechnologyOption } = {
     description: 'Javascript rendering library for web and mobile',
     iconUrl: 'technology-icons/react.png',
     title: 'React',
+  },
+  sql: {
+    description: 'Structured database (mySQL and Access)',
+    iconUrl: 'technology-icons/sql.png',
+    title: 'Relational DBs',
   },
   ts: {
     description: 'Syntatic superset of JavaScript language',

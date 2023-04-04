@@ -55,7 +55,7 @@ function DesktopTabs() {
               backgroundColor: 'background',
               boxShadow: 'inset 0px 0px 3px 3px rgba(0,0,0,0.49)',
               color: 'black',
-              height: '350px',
+              height: '500px',
               padding: 0,
             }}
           >
@@ -123,63 +123,61 @@ function Professional() {
     <Box
       sx={{
         display: { base: 'inherit', md: 'grid' },
-        gridTemplateColumns: { base: undefined, md: '277px auto auto' },
+        gridTemplateColumns: { base: undefined, md: '350px auto auto' },
         height: '100%',
         overflow: 'hidden',
       }}
     >
-      <Box sx={{ p: { base: null, md: 4 } }}>
+      <Box sx={{ p: { base: null, md: 12 }, pr: { base: null, md: 4 } }}>
         <Heading as="h2" size="md" sx={{ mb: 2 }}>
           Industry Knowledge
         </Heading>
-        <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 2 }}>
+        <Box sx={{ display: 'flex', gap: 4, mb: 4 }}>
           <Tag
-            size="md"
+            size="lg"
             sx={{
               alignSelf: 'start',
               background: 'primary',
               color: 'white',
-              py: 0.5,
-              width: '110px',
-            }}
-          >
-            Heavy manufacturing
-          </Tag>
-          <Tag
-            size="md"
-            sx={{
-              alignSelf: 'start',
-              background: 'primary',
-              color: 'white',
-              py: 0.5,
-              width: '86px',
+              py: 2,
             }}
           >
             Finance technology
           </Tag>
           <Tag
-            size="md"
+            size="lg"
             sx={{
               alignSelf: 'start',
               background: 'primary',
               color: 'white',
-              py: 0.5,
-              width: '103px',
+              py: 2,
+            }}
+          >
+            Product research & development
+          </Tag>
+        </Box>
+        <Box sx={{ display: 'flex', gap: 4 }}>
+          <Tag
+            size="lg"
+            sx={{
+              alignSelf: 'start',
+              background: 'primary',
+              color: 'white',
+              py: 2,
             }}
           >
             Supply chain consulting
           </Tag>
           <Tag
-            size="md"
+            size="lg"
             sx={{
               alignSelf: 'start',
               background: 'primary',
               color: 'white',
-              py: 0.5,
-              width: '132px',
+              py: 2,
             }}
           >
-            Product research & development
+            Heavy manufacturing
           </Tag>
         </Box>
 
@@ -188,8 +186,9 @@ function Professional() {
         </Heading>
         <Box
           sx={{
+            alignItems: 'center',
             display: 'grid',
-            gridTemplateColumns: 'repeat(4, 1fr)',
+            gridTemplateColumns: 'repeat(5, 1fr)',
             gap: 4,
           }}
         >
@@ -207,7 +206,7 @@ function Professional() {
         }}
       />
 
-      <Box sx={{ overflow: 'auto', py: 4, px: { base: null, md: 4 } }}>
+      <Box sx={{ overflow: 'auto', py: 12, pl: { base: null, md: 4 }, pr: { base: null, md: 12 } }}>
         <Text mb={2}>
           Driven by curiosity, I have danced around to various professions. I completed my degree in
           Mechanical Engineering focusing on dynamic systems and advanced computer algorithms. I
@@ -260,9 +259,9 @@ function Personal() {
     >
       <Box
         sx={{
-          p: { base: 2, md: 4 },
-          pr: { base: null, md: 0 },
-          px: { base: 10, md: null },
+          py: { base: 4, md: 12 },
+          pr: { base: 0, md: 2 },
+          pl: { base: 0, md: 12 },
           display: 'flex',
           overflow: 'hidden',
           flexShrink: 0,
@@ -270,7 +269,14 @@ function Personal() {
       >
         <Image src="/family.png" alt="family picture" />
       </Box>
-      <Box sx={{ overflow: 'auto', p: { base: null, md: 4 } }}>
+      <Box
+        sx={{
+          overflow: 'auto',
+          py: { base: 4, md: 12 },
+          pr: { base: 0, md: 12 },
+          pl: { base: 0, md: 2 },
+        }}
+      >
         <Text mb={2}>
           I grew up in Peoria, Illinois - a small city surrounded by rural farmland known for the
           phrase “Will it play in Peoria”. My favorite past time activities include: skateboarding,
