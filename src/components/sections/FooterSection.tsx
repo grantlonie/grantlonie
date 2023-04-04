@@ -9,15 +9,15 @@ export default function FooterSection() {
         flexDirection: 'column',
         gap: 2,
         alignItems: 'flex-end',
-        mt: 2,
-        mr: 4,
-        mb: 8,
+        m: 8,
+        mt: 4,
       }}
     >
       <Box sx={{ display: 'flex', gap: 2 }}>
         <SocialIcon value="github" />
         <SocialIcon value="linkedin" />
       </Box>
+      <Text fontSize="2xl">Grant Lonie</Text>
       <Text>Made with ❤️ by Gatsby</Text>
     </Box>
   )
