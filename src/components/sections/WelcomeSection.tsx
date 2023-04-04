@@ -11,7 +11,7 @@ const TypedTag = lazy(() => import('../TypedTag'))
 
 export default function WelcomeSection() {
   return (
-    <Box overflow="hidden" position="relative" height={height}>
+    <Box position="relative" height={height}>
       <Box
         height={height}
         overflow="hidden"
@@ -20,6 +20,7 @@ export default function WelcomeSection() {
         width="115%"
         position="relative"
         transformOrigin="bottom left"
+        boxShadow="0px 0px 3px 3px rgba(0,0,0,0.49)"
       >
         <ul className="circles">
           {new Array(10).fill(0).map((_, i) => (

@@ -2,6 +2,7 @@ import { Box, Container } from '@chakra-ui/react'
 import {
   AboutSection,
   ContactSection,
+  FooterSection,
   OfferingsSection,
   PortfolioSection,
   WelcomeSection,
@@ -24,6 +25,7 @@ export default function Home() {
         sx={{
           bgGradient:
             'radial(rgba(0,100,183,1) 0%, rgba(0,145,234,1) 80%, rgba(100,193,255,1) 100%)',
+          boxShadow: '0px 0px 3px 3px rgba(0,0,0,0.49)',
           color: 'white',
           ml: `-${leftAdj}px`,
           mt: '200px',
@@ -51,9 +53,11 @@ export default function Home() {
           </Container>
         </Box>
       </Box>
+
+      <FooterSection />
     </Box>
   )
 }
 
-const leftAdj = 70
-const widthPercent = 140
+const leftAdj = 90
+const widthPercent = 150
