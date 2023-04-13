@@ -252,7 +252,7 @@ const highlights: Highlight[] = [
     date: new Date('6/1/2012'),
     description:
       'Traveled to France to assist in manufacturing cost reduction initiatives (while exploring on the weekends).',
-    imageFile: 'cgn.jpg',
+    imageFile: 'cgn.JPG',
     latitude: 45.175863,
     longitude: 5.731326,
     purpose: 'work',
