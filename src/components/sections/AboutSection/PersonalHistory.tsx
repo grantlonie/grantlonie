@@ -19,7 +19,7 @@ export default function PersonalHistory() {
           flexShrink: 0,
         }}
       >
-        <Image src="/family.png" alt="family picture" />
+        <Image src="/family.png" alt="family picture" sx={{ borderRadius: 8 }} />
       </Box>
       <Box
         sx={{
