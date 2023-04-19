@@ -16,6 +16,7 @@ import {
   Text,
 } from '@chakra-ui/react'
 import { useState } from 'react'
+import { isSSR } from '../../../utils'
 import PersonalHistory from './PersonalHistory'
 import PositionalHistory from './PositionalHistory'
 import ProfessionalHistory from './ProfressionalHistory'
@@ -36,7 +37,7 @@ export default function AboutSection() {
 
 function DesktopTabs() {
   return (
-    <Tabs isLazy lazyBehavior="keepMounted" display={{ base: 'none', md: 'inherit' }}>
+    <Tabs isLazy={isSSR} display={{ base: 'none', md: 'inherit' }}>
       <TabList sx={{ border: 0 }}>
         {tabs.map(({ title }) => (
           <Tab key={title} _selected={{ color: 'primary' }}>
