@@ -24,10 +24,9 @@ export default function PortfolioSection() {
   const [selected, setSelected] = useState<PortfolioItemProps>(null)
 
   const modalOpen = selected != null
-  const mdSwiperProps = useBreakpointValue<Omit<SwiperProps, 'children'>>(
-    { md: { easingFunction: 'overshoot', Overlay, stopMode: 'multiple', endMode: 'carousel' } },
-    { ssr: false }
-  )
+  const mdSwiperProps = useBreakpointValue<Omit<SwiperProps, 'children'>>({
+    md: { easingFunction: 'overshoot', Overlay, stopMode: 'multiple', endMode: 'carousel' },
+  })
 
   return (
     <>
