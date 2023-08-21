@@ -1,64 +1,45 @@
-import { Box, Heading } from '@chakra-ui/react'
-import { lazy, Suspense, useRef, useState } from 'react'
-import { PortfolioItem as PortfolioItemProps } from '../portfolioItems'
-import useHover from '../utils/useHover'
+import { Box, Card, CardBody, CardHeader, Flex, Heading, Image, Text } from '@chakra-ui/react'
+import { PortfolioItemProps } from '../portfolioItems'
 import PlayOutlined from './icons/PlayOutlined'
-
-const VideoPlayer = lazy(() => import('./VideoPlayer'))
 
 interface Props {
   item: PortfolioItemProps
+  onClick: () => void
 }
 
 const playIconWidth = 75
 
-export default function PortfolioItem({ item }: Props) {
-  const { title, description, imageUrl, videoUrl } = item
-
-  const ref = useRef(null)
-  const hovering = useHover(ref)
-  const [playing, setPlaying] = useState(false)
+export default function PortfolioItem({ item, onClick }: Props) {
+  const { title, description, iconUrl, imageUrl, subtitle } = item
 
   return (
-    <Box
-      ref={ref}
-      sx={{
-        background: 'white',
-        border: '1px solid black',
-        borderRadius: '8px',
-        boxShadow: 'md',
-        cursor: 'pointer',
-        display: 'grid',
-        gridTemplateColumns: { base: 'auto', lg: '450px auto' },
-        overflow: 'hidden',
-        transformOrigin: '50% 50%',
-        transition: 'all 300ms ease',
-        ...((hovering || playing) && { transform: { lg: 'scale(1.1)' } }),
-      }}
-      onClick={() => setPlaying(true)}
+    <Card
+      onClick={onClick}
+      sx={{ background: 'white', cursor: 'pointer', height: '440px', my: 2, width: '335px' }}
     >
-      <Box position="relative">
-        {playing ? (
-          <Suspense>
-            <VideoPlayer url={videoUrl} />
-          </Suspense>
-        ) : (
-          <>
-            <img src={imageUrl} alt={`showcase image-${title}`} />
-            <Box
-              position="absolute"
-              left={`calc(50% - ${playIconWidth / 2}px)`}
-              top={`calc(50% - ${playIconWidth / 2}px)`}
-            >
-              <PlayOutlined fontSize={playIconWidth} />
-            </Box>
-          </>
-        )}
+      <CardHeader>
+        <Flex flex="1" gap="4" alignItems="center" flexWrap="wrap">
+          <Image alt={title} src={iconUrl} sx={{ height: '40px' }} />
+          <Heading>{title}</Heading>
+        </Flex>
+      </CardHeader>
+
+      <Text fontSize="sm" sx={{ px: 5, pb: 3 }}>
+        {subtitle}
+      </Text>
+
+      <Box sx={{ position: 'relative' }}>
+        <Image objectFit="cover" src={imageUrl} alt={`${title} portfolio`} />
+        <Box
+          position="absolute"
+          left={`calc(50% - ${playIconWidth / 2}px)`}
+          top={`calc(50% - ${playIconWidth / 2}px)`}
+        >
+          <PlayOutlined fontSize={playIconWidth} />
+        </Box>
       </Box>
-      <Box mx={2}>
-        <Heading mb={1}>{title}</Heading>
-        {description}
-      </Box>
-    </Box>
+
+      <CardBody>{description}</CardBody>
+    </Card>
   )
 }

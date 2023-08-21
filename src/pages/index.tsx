@@ -17,9 +17,7 @@ export default function Home() {
         <OfferingsSection />
       </Container>
 
-      <Container sx={{ color: 'black', maxW: '5xl', mt: '200px' }}>
-        <PortfolioSection />
-      </Container>
+      <PortfolioSection />
 
       <Box
         sx={{
