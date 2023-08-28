@@ -1,5 +1,5 @@
-import { Box, Button, Heading, Text } from '@chakra-ui/react'
-import { lazy, Suspense } from 'react'
+import { Box, Button, Heading } from '@chakra-ui/react'
+import { Suspense, lazy } from 'react'
 import '../../styles.css'
 import { isSSR } from '../../utils'
 import PowerIcon from '../PowerIcon'
@@ -46,13 +46,13 @@ export default function WelcomeSection() {
         {isSSR ? (
           <StaticTag />
         ) : (
-          <Suspense>
+          <Suspense fallback={<StaticTag />}>
             <TypedTag />
           </Suspense>
         )}
 
         <Box display="flex" justifyContent="center" mt={4}>
-          <Button variant="outline" onClick={handleGoToContact}>
+          <Button color="white" variant="outline" onClick={handleGoToContact}>
             Reach out 👋
           </Button>
         </Box>
@@ -61,7 +61,7 @@ export default function WelcomeSection() {
   )
 }
 
-const StaticTag = () => <Text fontSize="1.2em">Freelance web stack technologist</Text>
+const StaticTag = () => <Box fontSize="1.2em">Freelance web stack technologist</Box>
 
 function handleGoToContact() {
   window.scroll({ top: document.body.scrollHeight, behavior: 'smooth' })

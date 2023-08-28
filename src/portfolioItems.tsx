@@ -38,7 +38,7 @@ export const portfolioItems: PortfolioItemProps[] = [
     videoUrl: 'https://storage.cloud.google.com/grantlonie-public/showcase/builder.mp4',
   },
   {
-    title: 'Touch Displays',
+    title: 'Touch Display',
     description:
       'Architected and developed telematic touchscreen display applications to assist in the operational efficiency of large mining equipment',
     iconUrl: '/portfolio-icons/ARi.png',
