@@ -33,7 +33,6 @@ export default function PortfolioSection() {
       <Container sx={{ color: 'black', maxW: '5xl', mt: '200px' }}>
         <Heading mb={4}>Portfolio</Heading>
 
-        <Text fontSize="lg">The proof is in the pudding!</Text>
         <Text mb={5}>
           Sometimes you have to see it to believe it. Grab a coffee, get cozy, and dive in.
         </Text>

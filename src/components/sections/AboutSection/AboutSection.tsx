@@ -25,7 +25,6 @@ export default function AboutSection() {
   return (
     <>
       <Heading mb={4}>About</Heading>
-      <Text fontSize="lg">Still not convinced!</Text>
       <Text mb={5}>
         Let me tell you my story - the crazy career turns I've taken and my amazing family.
       </Text>

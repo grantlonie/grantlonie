@@ -1,5 +1,4 @@
-export { default as Chart } from './Chart'
-export { default as Compass } from './Compass'
-export { default as Devices } from './Devices'
-export { default as LightBulb } from './LightBulb'
+export { default as Consult } from './Consult'
+export { default as Field } from './Field'
+export { default as Partner } from './Partner'
 export { default as PlayOutlined } from './PlayOutlined'
