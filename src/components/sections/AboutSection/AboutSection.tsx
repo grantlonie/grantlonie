@@ -70,10 +70,10 @@ function MobileModals() {
   return (
     <Box display={{ md: 'none' }}>
       <Box sx={{ display: 'flex', gap: 4 }}>
-        <Button variant="outline" onClick={() => setValue('Professional')}>
+        <Button color="inherit" variant="outline" onClick={() => setValue('Professional')}>
           Professional
         </Button>
-        <Button variant="outline" onClick={() => setValue('Personal')}>
+        <Button color="inherit" variant="outline" onClick={() => setValue('Personal')}>
           Personal
         </Button>
       </Box>

@@ -52,7 +52,7 @@ export default function WelcomeSection() {
         )}
 
         <Box display="flex" justifyContent="center" mt={4}>
-          <Button color="white" variant="outline" onClick={handleGoToContact}>
+          <Button color="inherit" variant="outline" onClick={handleGoToContact}>
             Reach out 👋
           </Button>
         </Box>

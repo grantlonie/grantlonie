@@ -34,7 +34,7 @@ export default function ContactSection() {
         </FormControl>
 
         <Box display="flex" justifyContent="flex-end">
-          <Button disabled={!valid} type="submit" variant="outline" sx={{ mt: 2 }}>
+          <Button color="inherit" disabled={!valid} type="submit" variant="outline" sx={{ mt: 2 }}>
             Send
           </Button>
         </Box>
