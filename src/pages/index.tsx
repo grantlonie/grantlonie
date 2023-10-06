@@ -1,4 +1,4 @@
-import { Box, Container } from '@chakra-ui/react'
+import { Box, Container, useBreakpointValue } from '@chakra-ui/react'
 import {
   AboutSection,
   ContactSection,
@@ -7,8 +7,12 @@ import {
   PortfolioSection,
   WelcomeSection,
 } from '../components/sections'
+import { isSSR, rotateAngle } from '../utils'
 
 export default function Home() {
+  const height = useBreakpointValue({ base: 1300, md: 1900 }, { fallback: 'md' })
+  const angleAdj = isSSR ? 100 : window.innerWidth * Math.tan((rotateAngle * Math.PI) / 180)
+
   return (
     <Box sx={{ background: 'background', height: '100%', overflow: 'hidden' }}>
       <WelcomeSection />
@@ -19,30 +23,24 @@ export default function Home() {
 
       <PortfolioSection />
 
-      <Box
-        sx={{
-          bgGradient:
-            'radial(rgba(0,100,183,1) 0%, rgba(0,145,234,1) 80%, rgba(100,193,255,1) 100%)',
-          boxShadow: '0px 0px 3px 3px rgba(0,0,0,0.49)',
-          color: 'white',
-          ml: `-${leftAdj}px`,
-          mt: '200px',
-          overflow: 'hidden',
-          pb: '200px',
-          position: 'relative',
-          transform: 'rotate(355deg)',
-          transformOrigin: 'center',
-          width: `${widthPercent}%`,
-        }}
-      >
+      <Box sx={{ overflow: 'hidden', position: 'relative', height }}>
         <Box
           sx={{
-            transform: 'rotate(5deg)',
+            bgGradient:
+              'radial(rgba(0,100,183,1) 0%, rgba(0,145,234,1) 80%, rgba(100,193,255,1) 100%)',
+            boxShadow: '0px 0px 3px 3px rgba(0,0,0,0.49)',
+            color: 'white',
+            height: height - 2 * angleAdj,
+            ml: `-${leftAdj}px`,
+            mt: angleAdj,
+            overflow: 'hidden',
+            position: 'absolute',
+            transform: `rotate3d(0, 0, 1, ${360 - rotateAngle}deg)`,
             transformOrigin: 'center',
-            ml: `${leftAdj}px`,
-            width: `${10000 / widthPercent}%`,
+            width: `${widthPercent}%`,
           }}
-        >
+        />
+        <Box sx={{ color: 'white', mt: angleAdj, position: 'absolute', width: '100%' }}>
           <Container sx={{ maxW: '5xl', mt: '200px' }}>
             <AboutSection />
           </Container>

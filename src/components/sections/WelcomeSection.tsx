@@ -1,7 +1,7 @@
 import { Box, Button, Heading } from '@chakra-ui/react'
 import { Suspense, lazy } from 'react'
 import '../../styles.css'
-import { isSSR } from '../../utils'
+import { isSSR, rotateAngle } from '../../utils'
 import PowerIcon from '../PowerIcon'
 
 const height = 600
@@ -16,7 +16,7 @@ export default function WelcomeSection() {
         height={height}
         overflow="hidden"
         bgGradient="radial(rgba(0,100,183,1) 0%, rgba(0,145,234,1) 80%, rgba(100,193,255,1) 100%)"
-        transform="rotate(355deg)"
+        transform={`rotate3d(0, 0, 1, ${360 - rotateAngle}deg)`}
         width="115%"
         position="relative"
         transformOrigin="bottom left"
