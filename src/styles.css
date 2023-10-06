@@ -9,6 +9,23 @@ body {
   font-family: 'Exo', sans-serif;
 }
 
+::-webkit-scrollbar {
+  width: 13px;
+  height: 13px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background: #828282;
+  background-clip: padding-box;
+  border: 3px solid transparent;
+  min-height: 50px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  border-width: 1px;
+}
+
 .area {
   background: #4e54c8;
   background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);
