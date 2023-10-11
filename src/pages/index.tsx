@@ -1,4 +1,5 @@
 import { Box, Container, useBreakpointValue } from '@chakra-ui/react'
+import SEO from '../components/SEO'
 import {
   AboutSection,
   ContactSection,
@@ -8,6 +9,8 @@ import {
   WelcomeSection,
 } from '../components/sections'
 import { isSSR, rotateAngle } from '../utils'
+
+export const Head = () => <SEO />
 
 export default function Home() {
   const height = useBreakpointValue({ base: 1300, md: 1900 }, { fallback: 'md' })

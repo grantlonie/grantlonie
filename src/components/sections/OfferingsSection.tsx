@@ -62,7 +62,7 @@ function DesktopOfferings() {
             width: `${radius / 3}px`,
           }}
         >
-          <Image src="./icon.png" />
+          <Image src="./icon.png" alt="logo" />
         </Box>
         {offerings.map((p, i) => {
           const rotation = (step + i) * 120 + 160
