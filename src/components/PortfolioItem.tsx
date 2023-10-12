@@ -15,7 +15,14 @@ export default function PortfolioItem({ item, onClick }: Props) {
   return (
     <Card
       onClick={onClick}
-      sx={{ background: 'white', cursor: 'pointer', height: '440px', my: 2, width: '335px' }}
+      sx={{
+        background: 'white',
+        color: 'black',
+        cursor: 'pointer',
+        height: '440px',
+        my: 2,
+        width: '335px',
+      }}
     >
       <CardHeader>
         <Flex flex="1" gap="4" alignItems="center" flexWrap="wrap">
