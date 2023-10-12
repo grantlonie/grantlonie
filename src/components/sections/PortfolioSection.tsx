@@ -25,7 +25,13 @@ export default function PortfolioSection() {
 
   const modalOpen = selected != null
   const mdSwiperProps = useBreakpointValue<Omit<SwiperProps, 'children'>>({
-    md: { easingFunction: 'overshoot', Overlay, stopMode: 'multiple', endMode: 'carousel' },
+    md: {
+      braking: 50,
+      easingFunction: 'overshoot',
+      Overlay,
+      stopMode: 'multiple',
+      endMode: 'carousel',
+    },
   })
 
   return (
@@ -39,7 +45,7 @@ export default function PortfolioSection() {
       </Container>
 
       <Container sx={{ color: 'black', p: 0, maxW: '8xl' }}>
-        <Swiper align="center" gap={20} stopMode="free" {...mdSwiperProps}>
+        <Swiper align="center" braking={30} gap={20} stopMode="free" {...mdSwiperProps}>
           {portfolioItems.map((p, i) => (
             <PortfolioItem key={i} item={p} onClick={() => setSelected(p)} />
           ))}

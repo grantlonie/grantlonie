@@ -18,7 +18,7 @@
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
     "@react-google-maps/api": "^2.18.1",
-    "canari-swipe": "^3.2.1",
+    "canari-swipe": "^3.2.2",
     "dayjs": "^1.11.7",
     "gatsby": "^5.3.3",
     "gatsby-plugin-manifest": "^5.3.1",
