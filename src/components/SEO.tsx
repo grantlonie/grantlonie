@@ -1,7 +1,7 @@
 const title = 'Grant Lonie'
 const description = `Grant's freelance portfolio`
-const image = '/icon.png'
 const url = 'https://www.grantlonie.me'
+const image = `${url}/icon.svg`
 
 export default function SEO({ children }: { children?: any }) {
   return (
