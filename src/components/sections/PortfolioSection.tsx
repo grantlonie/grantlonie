@@ -26,13 +26,7 @@ export default function PortfolioSection() {
 
   const modalOpen = selected != null
   const mdSwiperProps = useBreakpointValue<Omit<SwiperProps, 'children'>>({
-    md: {
-      braking: 50,
-      easingFunction: 'overshoot',
-      endMode: 'carousel',
-      Overlay,
-      stopMode: 'multiple',
-    },
+    md: { braking: 50, endMode: 'carousel', Overlay, stopMode: 'multiple' },
   })
 
   return (
@@ -46,7 +40,14 @@ export default function PortfolioSection() {
       </Container>
 
       <Container sx={{ color: 'black', p: 0, maxW: '8xl' }}>
-        <Swiper align="center" braking={25} gap={20} stopMode="free" {...mdSwiperProps}>
+        <Swiper
+          align="center"
+          braking={25}
+          easingFunction="overshoot"
+          gap={20}
+          stopMode="free"
+          {...mdSwiperProps}
+        >
           {portfolioItems.map((p, i) => (
             <PortfolioItem key={i} item={p} onClick={() => setSelected(p)} />
           ))}
@@ -79,7 +80,7 @@ export default function PortfolioSection() {
   )
 }
 
-function Overlay({ methods }: SwiperOverlayProps) {
+function Overlay({ actionClass, methods }: SwiperOverlayProps) {
   const theme = useTheme()
   //@ts-ignore
   const background = theme.colors.background
@@ -93,8 +94,12 @@ function Overlay({ methods }: SwiperOverlayProps) {
         pointerEvents: 'none',
       }}
     >
-      <NavButton onClick={methods.prev} sx={{ transform: 'rotate(180deg)' }} />
-      <NavButton onClick={methods.next} />
+      <NavButton
+        className={actionClass}
+        onClick={methods.prev}
+        sx={{ transform: 'rotate(180deg)' }}
+      />
+      <NavButton className={actionClass} onClick={methods.next} />
     </Box>
   )
 }
@@ -111,7 +116,6 @@ function NavButton({ sx, ...rest }: BoxProps) {
         color: 'black',
         height: '100%',
         px: 4,
-        pointerEvents: 'auto',
         _hover: { backgroundColor: 'white' },
         ...sx,
       }}
