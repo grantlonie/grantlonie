@@ -1,7 +1,16 @@
+import { Script } from 'gatsby'
+
 const title = 'Grant Lonie'
 const description = `Grant's freelance portfolio`
 const url = 'https://www.grantlonie.me'
 const image = `${url}/title.png`
+
+const googleTagId = 'G-BEZZJN6S93'
+
+const analyticsScript = `window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', '${googleTagId}');`
 
 export default function SEO({ children }: { children?: any }) {
   return (
@@ -24,6 +33,9 @@ export default function SEO({ children }: { children?: any }) {
       <meta name="twitter:image:alt" content={title} />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:site" content="@GeeDollaHolla"></meta>
+
+      <Script async src={`https://www.googletagmanager.com/gtag/js?id=${googleTagId}`} />
+      <Script id="google-analytics">{analyticsScript}</Script>
 
       {children}
     </>

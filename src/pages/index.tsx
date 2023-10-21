@@ -10,7 +10,7 @@ import {
 } from '../components/sections'
 import { isSSR, rotateAngle } from '../utils'
 
-export const Head = () => <SEO />
+export const Head = SEO
 
 export default function Home() {
   const height = useBreakpointValue({ base: 1300, md: 1900 }, { fallback: 'md' })
