@@ -1,7 +1,6 @@
 import {
   Box,
   Button,
-  Heading,
   Modal,
   ModalBody,
   ModalCloseButton,
@@ -13,10 +12,10 @@ import {
   TabPanel,
   TabPanels,
   Tabs,
-  Text,
 } from '@chakra-ui/react'
 import { useState } from 'react'
 import { isSSR } from '../../../utils'
+import SectionHeader from '../../SectionHeader'
 import PersonalHistory from './PersonalHistory'
 import PositionalHistory from './PositionalHistory'
 import ProfessionalHistory from './ProfressionalHistory'
@@ -24,10 +23,11 @@ import ProfessionalHistory from './ProfressionalHistory'
 export default function AboutSection() {
   return (
     <>
-      <Heading mb={4}>About</Heading>
-      <Text mb={5}>
-        Let me tell you my story - the crazy career turns I've taken and my amazing family.
-      </Text>
+      <SectionHeader
+        title="About"
+        description="Let me tell you my story - the crazy career turns I've taken and my amazing family."
+      />
+
       <DesktopTabs />
       <MobileModals />
     </>

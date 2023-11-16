@@ -1,5 +1,6 @@
-import { Box, Button, FormControl, FormLabel, Heading, Input, Textarea } from '@chakra-ui/react'
+import { Box, Button, FormControl, FormLabel, Input, Textarea } from '@chakra-ui/react'
 import { useState } from 'react'
+import SectionHeader from '../SectionHeader'
 
 const emailService = 'https://getform.io/f/c8a53674-04db-4c2f-bd81-bd6ed9378f63'
 
@@ -9,7 +10,7 @@ export default function ContactSection() {
 
   return (
     <>
-      <Heading mb={8}>Reach out</Heading>
+      <SectionHeader title="Reach out" />
 
       <form action={emailService} method="POST">
         <Box sx={{ display: 'grid', gap: 2, gridTemplateColumns: { md: '1fr 1fr' }, mb: 2 }}>

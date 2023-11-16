@@ -1,16 +1,14 @@
 {
-  "name": "gatsby-starter-hello-world",
+  "name": "grantlonie",
   "private": true,
-  "description": "A simplified bare-bones starter for Gatsby",
+  "description": "My portfolio",
   "version": "0.1.0",
   "license": "0BSD",
   "scripts": {
     "build": "gatsby build",
-    "develop": "gatsby develop",
     "start": "gatsby develop",
     "serve": "gatsby serve",
-    "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "clean": "gatsby clean"
   },
   "dependencies": {
     "@chakra-ui/gatsby-plugin": "^3.1.0",

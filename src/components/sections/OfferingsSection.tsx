@@ -2,6 +2,7 @@ import { Box, BoxProps, Container, Heading, Image, Text } from '@chakra-ui/react
 import { MotionValue, motion, useScroll, useTransform } from 'framer-motion'
 import { useRef } from 'react'
 import { Offering, offerings } from '../../offerings'
+import SectionHeader from '../SectionHeader'
 
 const itemWidth = 260
 const itemHeight = 160
@@ -10,11 +11,12 @@ const radius = 190
 export default function OfferingsSection() {
   return (
     <>
-      <Heading mb={4}>Services</Heading>
-      <Text mb={5}>
-        Whether you need help bringing your idea to life or need a partner to assist in ideation and
-        feature rollout, I have a model to suit your needs
-      </Text>
+      <SectionHeader
+        title="Services"
+        description="Whether you need help bringing your idea to life or need a partner to assist in ideation and
+        feature rollout, I have a model to suit your needs"
+      />
+
       <DesktopOfferings />
       <MobileOfferings />
     </>

@@ -15,10 +15,12 @@ import {
 } from '@chakra-ui/react'
 import { useTheme } from '@emotion/react'
 import Swiper, { SwiperOverlayProps, SwiperProps } from 'canari-swipe'
-import { Suspense, lazy, useEffect, useRef, useState } from 'react'
+import { Variants, motion } from 'framer-motion'
+import { Suspense, lazy, useRef, useState } from 'react'
 import { PortfolioItemProps, portfolioItems } from '../../portfolioItems'
+import useAnimateOnView from '../../utils/useAnimateOnView'
 import PortfolioItem from '../PortfolioItem'
-import { Variants, motion, useAnimation, useInView } from 'framer-motion'
+import SectionHeader from '../SectionHeader'
 
 const VideoPlayer = lazy(() => import('../VideoPlayer'))
 
@@ -30,30 +32,20 @@ export default function PortfolioSection() {
     md: { braking: 50, endMode: 'carousel', Overlay, stopMode: 'multiple' },
   })
 
-  const controls = useAnimation()
   const swiperRef = useRef()
-  const inView = useInView(swiperRef, { amount: 0.7 })
-  useEffect(() => {
-    if (inView) controls.start('visible')
-  }, [controls, inView])
+  const controls = useAnimateOnView(swiperRef)
 
   return (
     <>
       <Container sx={{ color: 'black', maxW: '5xl', mt: '200px' }}>
-        <Heading mb={4}>Portfolio</Heading>
-
-        <Text mb={5}>
-          Sometimes you have to see it to believe it. Grab a coffee, get cozy, and dive in.
-        </Text>
+        <SectionHeader
+          title="Portfolio"
+          description="Sometimes you have to see it to believe it. Grab a coffee, get cozy, and dive in."
+        />
       </Container>
 
       <Container ref={swiperRef} sx={{ color: 'black', p: 0, maxW: '8xl' }}>
-        <motion.div
-          animate={controls}
-          className="container"
-          initial="hidden"
-          variants={containerAnimationVariant}
-        >
+        <motion.div animate={controls} initial="hidden" variants={containerAnimationVariants}>
           <Swiper
             align="center"
             braking={25}
@@ -68,7 +60,7 @@ export default function PortfolioSection() {
                 onClick={() => setSelected(p)}
                 sx={{ cursor: 'pointer', height: '440px', width: '335px' }}
               >
-                <motion.div variants={itemAnimationVariant}>
+                <motion.div variants={itemAnimationVariants}>
                   <PortfolioItem item={p} />
                 </motion.div>
               </Box>
@@ -168,7 +160,7 @@ function RightArrow(props) {
   )
 }
 
-const containerAnimationVariant: Variants = {
+const containerAnimationVariants: Variants = {
   hidden: { opacity: 1, scale: 0 },
   visible: {
     opacity: 1,
@@ -177,7 +169,7 @@ const containerAnimationVariant: Variants = {
   },
 }
 
-const itemAnimationVariant: Variants = {
+const itemAnimationVariants: Variants = {
   hidden: { y: 40, opacity: 0 },
   visible: { y: 0, opacity: 1 },
 }
