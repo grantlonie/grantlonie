@@ -1,12 +1,11 @@
 import { Box, BoxProps, Container, Heading, Image, Text } from '@chakra-ui/react'
-import { useEffect, useState } from 'react'
+import { MotionValue, motion, useScroll, useTransform } from 'framer-motion'
+import { useRef } from 'react'
 import { Offering, offerings } from '../../offerings'
 
 const itemWidth = 260
 const itemHeight = 160
 const radius = 190
-const clock = 8000 // ms step time
-const transition = `all ${clock / 2}ms ease`
 
 export default function OfferingsSection() {
   return (
@@ -23,12 +22,8 @@ export default function OfferingsSection() {
 }
 
 function DesktopOfferings() {
-  const [step, setStep] = useState(0)
-
-  useEffect(() => {
-    const interval = setInterval(() => setStep(s => s + 1), clock)
-    return () => clearInterval(interval)
-  }, [])
+  const ref = useRef()
+  const { scrollYProgress } = useScroll({ target: ref, offset: ['start end', 'end start'] })
 
   return (
     <Container
@@ -40,7 +35,7 @@ function DesktopOfferings() {
         height: radius * 2 + 200,
       }}
     >
-      <Box sx={{ position: 'relative' }}>
+      <Box ref={ref} sx={{ position: 'relative' }}>
         <Box
           sx={{
             height: radius * 2,
@@ -64,36 +59,14 @@ function DesktopOfferings() {
         >
           <Image src="./icon.png" alt="logo" />
         </Box>
-        {offerings.map((p, i) => {
-          const rotation = (step + i) * 120 + 160
+        {offerings.map((offering, i) => {
           return (
-            <Box
-              key={p.title}
-              style={{ transform: `rotate(${rotation}deg)` }}
-              sx={{
-                height: radius,
-                bottom: 0,
-                position: 'absolute',
-                transition,
-                transformOrigin: 'bottom',
-              }}
-            >
-              <Item
-                {...p}
-                sx={{
-                  backgroundColor: 'background',
-                  borderRadius: '8px',
-                  position: 'absolute',
-                  transition,
-                  top: `${-itemHeight / 2}px`,
-                  left: `${-itemWidth / 2}px`,
-                  height: itemHeight,
-                  width: itemWidth,
-                  p: 2,
-                }}
-                style={{ transform: `rotate(-${rotation}deg)` }}
-              />
-            </Box>
+            <RotateItem
+              key={offering.title}
+              offering={offering}
+              offset={i * 120}
+              progress={scrollYProgress}
+            />
           )
         })}
       </Box>
@@ -112,6 +85,48 @@ function MobileOfferings() {
 }
 
 type ItemProps = Offering & BoxProps
+
+interface RotateItemProps {
+  offering: Offering
+  /** degrees offset */
+  offset: number
+  /** percent scroll */
+  progress: MotionValue
+}
+
+function RotateItem({ progress, offering, offset }: RotateItemProps) {
+  const rotate = useTransform(() => progress.get() * 100 + offset)
+  const reverseRotate = useTransform(() => rotate.get() * -1)
+
+  return (
+    <motion.div style={{ rotate }}>
+      <Box
+        sx={{
+          height: radius,
+          bottom: 0,
+          position: 'absolute',
+          transformOrigin: 'bottom',
+        }}
+      >
+        <motion.div style={{ rotate: reverseRotate }}>
+          <Item
+            {...offering}
+            sx={{
+              backgroundColor: 'background',
+              borderRadius: '8px',
+              position: 'absolute',
+              top: `${-itemHeight / 2}px`,
+              left: `${-itemWidth / 2}px`,
+              height: itemHeight,
+              width: itemWidth,
+              p: 2,
+            }}
+          />
+        </motion.div>
+      </Box>
+    </motion.div>
+  )
+}
 
 function Item({ description, Icon, title, sx, ...rest }: ItemProps) {
   return (
