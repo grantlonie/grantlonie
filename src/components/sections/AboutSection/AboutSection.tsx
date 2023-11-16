@@ -15,6 +15,7 @@ import {
 } from '@chakra-ui/react'
 import { useState } from 'react'
 import { isSSR } from '../../../utils'
+import AnimateIn from '../../AnimateIn'
 import SectionHeader from '../../SectionHeader'
 import PersonalHistory from './PersonalHistory'
 import PositionalHistory from './PositionalHistory'
@@ -28,8 +29,10 @@ export default function AboutSection() {
         description="Let me tell you my story - the crazy career turns I've taken and my amazing family."
       />
 
-      <DesktopTabs />
-      <MobileModals />
+      <AnimateIn>
+        <DesktopTabs />
+        <MobileModals />
+      </AnimateIn>
     </>
   )
 }

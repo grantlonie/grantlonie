@@ -1,7 +1,7 @@
 import { Heading, Text } from '@chakra-ui/react'
 import { Variants, motion } from 'framer-motion'
 import { useRef } from 'react'
-import useAnimateOnView from '../utils/useAnimateOnView'
+import { useAnimateOnView } from '../utils/animationUtils'
 
 interface Props {
   title: string

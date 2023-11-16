@@ -1,5 +1,6 @@
 import { Box, Button, FormControl, FormLabel, Input, Textarea } from '@chakra-ui/react'
 import { useState } from 'react'
+import AnimateIn from '../AnimateIn'
 import SectionHeader from '../SectionHeader'
 
 const emailService = 'https://getform.io/f/c8a53674-04db-4c2f-bd81-bd6ed9378f63'
@@ -12,34 +13,42 @@ export default function ContactSection() {
     <>
       <SectionHeader title="Reach out" />
 
-      <form action={emailService} method="POST">
-        <Box sx={{ display: 'grid', gap: 2, gridTemplateColumns: { md: '1fr 1fr' }, mb: 2 }}>
-          <FormControl>
-            <FormLabel>Email address</FormLabel>
-            <Input
-              type="email"
-              name="email"
-              value={email}
-              onChange={e => setEmail(e.target.value)}
-            />
-          </FormControl>
-          <FormControl>
-            <FormLabel>Name</FormLabel>
-            <Input type="text" name="name" />
-          </FormControl>
-        </Box>
+      <AnimateIn>
+        <form action={emailService} method="POST">
+          <Box sx={{ display: 'grid', gap: 2, gridTemplateColumns: { md: '1fr 1fr' }, mb: 2 }}>
+            <FormControl>
+              <FormLabel>Email address</FormLabel>
+              <Input
+                type="email"
+                name="email"
+                value={email}
+                onChange={e => setEmail(e.target.value)}
+              />
+            </FormControl>
+            <FormControl>
+              <FormLabel>Name</FormLabel>
+              <Input type="text" name="name" />
+            </FormControl>
+          </Box>
 
-        <FormControl>
-          <FormLabel>What can I help you with</FormLabel>
-          <Textarea height="200px" name="body" />{' '}
-        </FormControl>
+          <FormControl>
+            <FormLabel>What can I help you with</FormLabel>
+            <Textarea height="200px" name="body" />{' '}
+          </FormControl>
 
-        <Box display="flex" justifyContent="flex-end">
-          <Button color="inherit" disabled={!valid} type="submit" variant="outline" sx={{ mt: 2 }}>
-            Send
-          </Button>
-        </Box>
-      </form>
+          <Box display="flex" justifyContent="flex-end">
+            <Button
+              color="inherit"
+              disabled={!valid}
+              type="submit"
+              variant="outline"
+              sx={{ mt: 2 }}
+            >
+              Send
+            </Button>
+          </Box>
+        </form>
+      </AnimateIn>
     </>
   )
 }

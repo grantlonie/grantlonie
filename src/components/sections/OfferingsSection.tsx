@@ -1,7 +1,8 @@
-import { Box, BoxProps, Container, Heading, Image, Text } from '@chakra-ui/react'
+import { Box, BoxProps, Container, Image, Text } from '@chakra-ui/react'
 import { MotionValue, motion, useScroll, useTransform } from 'framer-motion'
 import { useRef } from 'react'
 import { Offering, offerings } from '../../offerings'
+import AnimateIn from '../AnimateIn'
 import SectionHeader from '../SectionHeader'
 
 const itemWidth = 260
@@ -17,8 +18,10 @@ export default function OfferingsSection() {
         feature rollout, I have a model to suit your needs"
       />
 
-      <DesktopOfferings />
-      <MobileOfferings />
+      <AnimateIn>
+        <DesktopOfferings />
+        <MobileOfferings />
+      </AnimateIn>
     </>
   )
 }
@@ -29,6 +32,7 @@ function DesktopOfferings() {
 
   return (
     <Container
+      ref={ref}
       maxW="3xl"
       sx={{
         display: { base: 'none', md: 'flex' },
@@ -37,7 +41,7 @@ function DesktopOfferings() {
         height: radius * 2 + 200,
       }}
     >
-      <Box ref={ref} sx={{ position: 'relative' }}>
+      <Box sx={{ position: 'relative' }}>
         <Box
           sx={{
             height: radius * 2,

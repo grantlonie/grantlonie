@@ -18,7 +18,7 @@ import Swiper, { SwiperOverlayProps, SwiperProps } from 'canari-swipe'
 import { Variants, motion } from 'framer-motion'
 import { Suspense, lazy, useRef, useState } from 'react'
 import { PortfolioItemProps, portfolioItems } from '../../portfolioItems'
-import useAnimateOnView from '../../utils/useAnimateOnView'
+import { defaultVariants, useAnimateOnView } from '../../utils/animationUtils'
 import PortfolioItem from '../PortfolioItem'
 import SectionHeader from '../SectionHeader'
 
@@ -60,7 +60,7 @@ export default function PortfolioSection() {
                 onClick={() => setSelected(p)}
                 sx={{ cursor: 'pointer', height: '440px', width: '335px' }}
               >
-                <motion.div variants={itemAnimationVariants}>
+                <motion.div variants={defaultVariants}>
                   <PortfolioItem item={p} />
                 </motion.div>
               </Box>
@@ -167,9 +167,4 @@ const containerAnimationVariants: Variants = {
     scale: 1,
     transition: { delayChildren: 0.1, staggerChildren: 0.2 },
   },
-}
-
-const itemAnimationVariants: Variants = {
-  hidden: { y: 40, opacity: 0 },
-  visible: { y: 0, opacity: 1 },
 }
