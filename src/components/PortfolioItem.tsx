@@ -4,24 +4,19 @@ import PlayOutlined from './icons/PlayOutlined'
 
 interface Props {
   item: PortfolioItemProps
-  onClick: () => void
 }
 
 const playIconWidth = 75
 
-export default function PortfolioItem({ item, onClick }: Props) {
+export default function PortfolioItem({ item }: Props) {
   const { title, description, iconUrl, imageUrl, subtitle } = item
 
   return (
     <Card
-      onClick={onClick}
       sx={{
         background: 'white',
         color: 'black',
-        cursor: 'pointer',
-        height: '440px',
         my: 2,
-        width: '335px',
       }}
     >
       <CardHeader>

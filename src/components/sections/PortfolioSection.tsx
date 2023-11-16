@@ -15,9 +15,10 @@ import {
 } from '@chakra-ui/react'
 import { useTheme } from '@emotion/react'
 import Swiper, { SwiperOverlayProps, SwiperProps } from 'canari-swipe'
-import { Suspense, lazy, useState } from 'react'
+import { Suspense, lazy, useEffect, useRef, useState } from 'react'
 import { PortfolioItemProps, portfolioItems } from '../../portfolioItems'
 import PortfolioItem from '../PortfolioItem'
+import { Variants, motion, useAnimation, useInView } from 'framer-motion'
 
 const VideoPlayer = lazy(() => import('../VideoPlayer'))
 
@@ -29,6 +30,13 @@ export default function PortfolioSection() {
     md: { braking: 50, endMode: 'carousel', Overlay, stopMode: 'multiple' },
   })
 
+  const controls = useAnimation()
+  const swiperRef = useRef()
+  const inView = useInView(swiperRef, { amount: 0.7 })
+  useEffect(() => {
+    if (inView) controls.start('visible')
+  }, [controls, inView])
+
   return (
     <>
       <Container sx={{ color: 'black', maxW: '5xl', mt: '200px' }}>
@@ -39,19 +47,34 @@ export default function PortfolioSection() {
         </Text>
       </Container>
 
-      <Container sx={{ color: 'black', p: 0, maxW: '8xl' }}>
-        <Swiper
-          align="center"
-          braking={25}
-          easingFunction="overshoot"
-          gap={20}
-          stopMode="free"
-          {...mdSwiperProps}
+      <Container ref={swiperRef} sx={{ color: 'black', p: 0, maxW: '8xl' }}>
+        <motion.div
+          animate={controls}
+          className="container"
+          initial="hidden"
+          variants={containerAnimationVariant}
         >
-          {portfolioItems.map((p, i) => (
-            <PortfolioItem key={i} item={p} onClick={() => setSelected(p)} />
-          ))}
-        </Swiper>
+          <Swiper
+            align="center"
+            braking={25}
+            easingFunction="overshoot"
+            gap={20}
+            stopMode="free"
+            {...mdSwiperProps}
+          >
+            {portfolioItems.map((p, i) => (
+              <Box
+                key={i}
+                onClick={() => setSelected(p)}
+                sx={{ cursor: 'pointer', height: '440px', width: '335px' }}
+              >
+                <motion.div variants={itemAnimationVariant}>
+                  <PortfolioItem item={p} />
+                </motion.div>
+              </Box>
+            ))}
+          </Swiper>
+        </motion.div>
       </Container>
 
       <Modal isCentered onClose={() => setSelected(null)} size="3xl" isOpen={modalOpen}>
@@ -143,4 +166,18 @@ function RightArrow(props) {
       />
     </svg>
   )
+}
+
+const containerAnimationVariant: Variants = {
+  hidden: { opacity: 1, scale: 0 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: { delayChildren: 0.1, staggerChildren: 0.2 },
+  },
+}
+
+const itemAnimationVariant: Variants = {
+  hidden: { y: 40, opacity: 0 },
+  visible: { y: 0, opacity: 1 },
 }
