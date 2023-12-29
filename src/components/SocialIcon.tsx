@@ -28,7 +28,7 @@ const socialDictionary: { [key in SocialSite]: SocialSiteOption } = {
   github: {
     iconUrl: 'github.png',
     title: 'GitHub',
-    url: 'https://github.com/GeeDollaHolla',
+    url: 'https://github.com/grantlonie',
   },
   linkedin: {
     iconUrl: 'linkedin.png',
