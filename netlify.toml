@@ -1,14 +1,17 @@
 [[redirects]]
   from = "https://grantlonie.me"
   to = "https://grantlonie.com"
+  force=true
   status = 301
 
 [[redirects]]
   from = "https://www.grantlonie.me"
   to = "https://grantlonie.com"
+  force=true
   status = 301
 
 [[redirects]]
-  from = "https://www.grantlonie.me"
+  from = "https://www.grantlonie.com"
   to = "https://grantlonie.com"
+  force=true
   status = 301
