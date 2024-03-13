@@ -2,7 +2,7 @@ import { Script } from 'gatsby'
 
 const title = 'Grant Lonie'
 const description = `Grant's freelance portfolio`
-const url = 'https://www.grantlonie.me'
+const url = 'https://grantlonie.com'
 const image = `${url}/title.png`
 
 const googleTagId = 'G-BEZZJN6S93'

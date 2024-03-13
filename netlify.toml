@@ -1,0 +1,14 @@
+[[redirects]]
+  from = "https://grantlonie.me"
+  to = "https://grantlonie.com"
+  status = 301
+
+[[redirects]]
+  from = "https://www.grantlonie.me"
+  to = "https://grantlonie.com"
+  status = 301
+
+[[redirects]]
+  from = "https://www.grantlonie.me"
+  to = "https://grantlonie.com"
+  status = 301
