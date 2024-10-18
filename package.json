@@ -18,7 +18,7 @@
     "@react-google-maps/api": "^2.18.1",
     "canari-swipe": "^3.2.2",
     "dayjs": "^1.11.7",
-    "framer-motion": "^10.16.5",
+    "framer-motion": "^11.11.9",
     "gatsby": "^5.3.3",
     "gatsby-plugin-manifest": "^5.3.1",
     "gatsby-plugin-netlify": "^5.1.0",
