@@ -15,12 +15,16 @@ export default function SectionHeader({ title, description }: Props) {
   return (
     <motion.div ref={ref} variants={containerAnimationVariants} initial="hidden" animate={controls}>
       <motion.div variants={itemAnimationVariants}>
-        <Heading mb={4}>{title}</Heading>
+        <Heading size="2xl" mb={5}>
+          {title}
+        </Heading>
       </motion.div>
 
       {description && (
         <motion.div variants={itemAnimationVariants}>
-          <Text mb={5}>{description}</Text>
+          <Text fontSize="xl" mb={8}>
+            {description}
+          </Text>
         </motion.div>
       )}
     </motion.div>

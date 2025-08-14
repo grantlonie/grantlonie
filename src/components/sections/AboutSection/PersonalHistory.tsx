@@ -51,7 +51,7 @@ export default function PersonalHistory() {
         </Text>
         <Text mb={2}>
           Erica and I love to travel and spend most evenings cooking and sipping wine or classic
-          bourbon cocktails. We have two kids - James is turning 1 and our feisty cat Misty.
+          bourbon cocktails. We have two kids - James and Benjamin and our feisty cat Misty.
         </Text>
       </Box>
     </Box>

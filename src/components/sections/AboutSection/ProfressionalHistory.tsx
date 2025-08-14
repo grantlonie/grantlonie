@@ -91,18 +91,25 @@ export default function ProfessionalHistory() {
 
       <Box sx={{ overflow: 'auto', py: 12, pl: { base: null, md: 4 }, pr: { base: null, md: 12 } }}>
         <Text mb={2}>
-          Driven by curiosity, I have danced around to various professions. I completed my degree in
-          Mechanical Engineering focusing on dynamic systems and advanced computer algorithms. I
-          started my career in engine validation collecting and analyzing data. Desiring to get away
-          from the grease, I pursued a path in business and supply chain consulting, where I created
-          and visualized large databases and crafted fancy presentations. Tired of the go go, I
-          repositioned myself in product design and development managing timelines and teams for
-          heavy manufacturing electronics.
+          My career has been shaped by intellectual curiosity and a drive to tackle diverse
+          challenges across multiple industries. I hold a degree in Mechanical Engineering with
+          specialized focus on dynamic systems and advanced computer algorithms.
         </Text>
         <Text mb={2}>
-          Bringing my industry knowledge and algo-analytical skills together, I launched a full on
-          attack in user application software development. The past 5 five years has been a wild
-          ride:
+          I began my professional journey in engine validation, where I developed expertise in data
+          collection and analysis. Seeking to broaden my impact beyond technical operations, I
+          transitioned to business and supply chain consulting, where I specialized in database
+          development, data visualization, and executive presentation design.
+        </Text>
+        <Text mb={2}>
+          I then shifted my focus to product design and development within the heavy manufacturing
+          electronics sector, where I led cross-functional teams and managed complex project
+          timelines to deliver innovative solutions.
+        </Text>
+        <Text mb={2}>
+          Leveraging my industry expertise and analytical capabilities, I transitioned into user
+          application software development. Over the past five years, I have built a comprehensive
+          portfolio of technical achievements:
         </Text>
         <UnorderedList mb={2}>
           <ListItem>
@@ -119,6 +126,13 @@ export default function ProfessionalHistory() {
             architecting an advanced data visualization platform including: managing visuals with
             deployment process and change tracking, designing the UI-agnostic aggregation API, and
             developing a seamless drag and drop user widget and dashboard editors.
+          </ListItem>
+          <ListItem>
+            launching a comprehensive engagement platform that revolutionizes trade shows and
+            facility management by integrating: lead generation, interactive content, and
+            personalized user experiences. The application features real-time analytics dashboards,
+            customizable templates, seamless badge scanning capabilities, and multi-platform support
+            across mobile and desktop environments.
           </ListItem>
         </UnorderedList>
         <Text mb={2}>

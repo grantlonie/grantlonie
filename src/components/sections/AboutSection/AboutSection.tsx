@@ -26,7 +26,7 @@ export default function AboutSection() {
     <>
       <SectionHeader
         title="About"
-        description="Let me tell you my story - the crazy career turns I've taken and my amazing family."
+        description="Let me tell you my story - the evolution of my career that led to valuable cross-functional expertise and my amazing family."
       />
 
       <AnimateIn>

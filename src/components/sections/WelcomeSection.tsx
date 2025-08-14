@@ -1,15 +1,16 @@
-import { Box, Button, Heading } from '@chakra-ui/react'
+import { Box, Button, Flex, Heading, Image, useBreakpointValue } from '@chakra-ui/react'
 import { Suspense, lazy } from 'react'
 import '../../styles.css'
 import { isSSR, rotateAngle } from '../../utils'
 import PowerIcon from '../PowerIcon'
 
 const height = 600
-const titleBoxWidth = 316
 
 const TypedTag = lazy(() => import('../TypedTag'))
 
 export default function WelcomeSection() {
+  const titleBoxWidth = useBreakpointValue({ base: 370, md: 660 })
+
   return (
     <Box position="relative" height={height}>
       <Box
@@ -32,36 +33,54 @@ export default function WelcomeSection() {
         sx={{
           position: 'absolute',
           left: `calc(50% - ${titleBoxWidth / 2}px)`,
-          top: 250,
+          top: 100,
           width: titleBoxWidth,
           color: 'white',
         }}
       >
-        <Box display="flex" justifyContent="center" mb={2}>
-          <Heading as="h1" size="2xl">
-            Grant Lonie
-          </Heading>
-        </Box>
+        <Flex alignItems="center" flexDirection={{ base: 'column', md: 'row' }} gap={10}>
+          <Flex
+            align="center"
+            justify="center"
+            borderRadius="2xl"
+            backgroundColor="white"
+            overflow="hidden"
+            boxShadow="inset 0px 0px 3px 3px rgba(0,0,0,0.49)"
+          >
+            <Image src="mug-shot.png" alt="Grant Lonie" width="250px" />
+          </Flex>
 
-        {isSSR ? (
-          <StaticTag />
-        ) : (
-          <Suspense fallback={<StaticTag />}>
-            <TypedTag />
-          </Suspense>
-        )}
+          <Flex
+            alignItems={{ base: 'center', md: 'flex-start' }}
+            direction="column"
+            gap={5}
+            flex={1}
+          >
+            <Heading as="h1" size="3xl">
+              Grant Lonie
+            </Heading>
 
-        <Box display="flex" justifyContent="center" mt={4}>
-          <Button color="inherit" variant="outline" onClick={handleGoToContact}>
-            Reach out 👋
-          </Button>
-        </Box>
+            <Box width="360px">
+              {isSSR ? (
+                <StaticTag />
+              ) : (
+                <Suspense fallback={<StaticTag />}>
+                  <TypedTag />
+                </Suspense>
+              )}
+            </Box>
+
+            <Button color="inherit" variant="outline" onClick={handleGoToContact}>
+              Reach out 👋
+            </Button>
+          </Flex>
+        </Flex>
       </Box>
     </Box>
   )
 }
 
-const StaticTag = () => <Box fontSize="1.2em">Freelance web stack technologist</Box>
+const StaticTag = () => <Box fontSize="1.5em">Freelance web stack technologist</Box>
 
 function handleGoToContact() {
   window.scroll({ top: document.body.scrollHeight, behavior: 'smooth' })

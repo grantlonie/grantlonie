@@ -10,7 +10,7 @@ export default function TypedTag() {
       wrapper="div"
       cursor={true}
       repeat={Infinity}
-      style={{ color: theme.colors.white, fontSize: '1.2em' }}
+      style={{ color: theme.colors.white, fontSize: '1.5em' }}
     />
   )
 }
@@ -18,10 +18,10 @@ export default function TypedTag() {
 const tagSequence = [
   'Freelance web stack technologist',
   2000,
-  'Freelance web application guru',
+  'Freelance software architect',
   2000,
-  'Admirable multi-platform architect',
+  'Fractional Technology Officer',
   2000,
-  'Admirable husband and father',
+  'Devoted husband and father',
   2000,
 ]

@@ -15,7 +15,7 @@ export default function OfferingsSection() {
       <SectionHeader
         title="Services"
         description="Whether you need help bringing your idea to life or need a partner to assist in ideation and
-        feature rollout, I have a model to suit your needs"
+        feature rollout, I have a model to suit your needs."
       />
 
       <AnimateIn>
