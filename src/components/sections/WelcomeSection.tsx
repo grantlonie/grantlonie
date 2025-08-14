@@ -9,14 +9,14 @@ const height = 600
 const TypedTag = lazy(() => import('../TypedTag'))
 
 export default function WelcomeSection() {
-  const titleBoxWidth = useBreakpointValue({ base: 370, md: 660 })
+  const titleBoxWidth = useBreakpointValue({ base: 370, md: 670 })
 
   return (
-    <Box position="relative" height={height}>
+    <Box position="relative" height={height} zIndex={1}>
       <Box
         height={height}
         overflow="hidden"
-        bgGradient="radial(rgba(0,100,183,1) 0%, rgba(0,145,234,1) 80%, rgba(100,193,255,1) 100%)"
+        bgGradient="radial(#393E46 0%, #5c6575ff 80%, #717b8cff 100%)"
         transform={`rotate3d(0, 0, 1, ${360 - rotateAngle}deg)`}
         width="115%"
         position="relative"
@@ -43,7 +43,7 @@ export default function WelcomeSection() {
             align="center"
             justify="center"
             borderRadius="2xl"
-            backgroundColor="white"
+            backgroundColor="background"
             overflow="hidden"
             boxShadow="inset 0px 0px 3px 3px rgba(0,0,0,0.49)"
           >

@@ -44,7 +44,10 @@ export default function PortfolioSection() {
         />
       </Container>
 
-      <Container ref={swiperRef} sx={{ color: 'black', p: 0, maxW: '8xl' }}>
+      <Container
+        ref={swiperRef}
+        sx={{ color: 'black', p: 0, maxW: '8xl', borderRadius: '3xl', overflow: 'hidden' }}
+      >
         <motion.div animate={controls} initial="hidden" variants={containerAnimationVariants}>
           <Swiper
             align="center"

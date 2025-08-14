@@ -42,7 +42,7 @@ function DesktopTabs() {
     <Tabs isLazy={isSSR} display={{ base: 'none', md: 'inherit' }}>
       <TabList sx={{ border: 0 }}>
         {tabs.map(({ title }) => (
-          <Tab key={title} _selected={{ color: 'primary' }}>
+          <Tab key={title} fontSize="lg" fontWeight="bold" _selected={{ color: 'primary' }}>
             {title}
           </Tab>
         ))}

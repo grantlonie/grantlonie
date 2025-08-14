@@ -1,13 +1,13 @@
-import { Box, BoxProps, Container, Image, Text } from '@chakra-ui/react'
+import { Box, Container, Flex, FlexProps, Image, Text } from '@chakra-ui/react'
 import { MotionValue, motion, useScroll, useTransform } from 'framer-motion'
 import { useRef } from 'react'
 import { Offering, offerings } from '../../offerings'
 import AnimateIn from '../AnimateIn'
 import SectionHeader from '../SectionHeader'
 
-const itemWidth = 260
-const itemHeight = 160
-const radius = 190
+const itemWidth = 285
+const itemHeight = 180
+const radius = 230
 
 export default function OfferingsSection() {
   return (
@@ -62,6 +62,7 @@ function DesktopOfferings() {
             height: `${radius / 3}px`,
             width: `${radius / 3}px`,
           }}
+          className="pulse"
         >
           <Image src="./icon.png" alt="logo" />
         </Box>
@@ -90,7 +91,7 @@ function MobileOfferings() {
   )
 }
 
-type ItemProps = Offering & BoxProps
+type ItemProps = Offering & FlexProps
 
 interface RotateItemProps {
   offering: Offering
@@ -118,14 +119,16 @@ function RotateItem({ progress, offering, offset }: RotateItemProps) {
           <Item
             {...offering}
             sx={{
-              backgroundColor: 'background',
+              border: '2px solid',
+              borderColor: 'primary',
               borderRadius: '8px',
               position: 'absolute',
               top: `${-itemHeight / 2}px`,
               left: `${-itemWidth / 2}px`,
+              backgroundColor: 'background',
               height: itemHeight,
+              px: 4,
               width: itemWidth,
-              p: 2,
             }}
           />
         </motion.div>
@@ -136,12 +139,19 @@ function RotateItem({ progress, offering, offset }: RotateItemProps) {
 
 function Item({ description, Icon, title, sx, ...rest }: ItemProps) {
   return (
-    <Box sx={{ ...sx }} {...rest}>
-      <Box sx={{ display: 'flex', gap: 4, alignItems: 'center' }}>
+    <Flex
+      sx={{
+        flexDirection: 'column',
+        justifyContent: 'center',
+        ...sx,
+      }}
+      {...rest}
+    >
+      <Flex sx={{ gap: 4, alignItems: 'center' }}>
         <Icon sx={{ color: 'primary', fontSize: { base: '2xl', md: '6xl' } }} />
         <Text fontSize="4xl">{title}</Text>
-      </Box>
+      </Flex>
       {description}
-    </Box>
+    </Flex>
   )
 }

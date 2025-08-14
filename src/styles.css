@@ -141,3 +141,17 @@ body {
     border-radius: 50%;
   }
 }
+
+.pulse {
+  border-radius: 99999999px;
+  animation: pulse-animation 5s ease-in infinite alternate;
+}
+
+@keyframes pulse-animation {
+  0% {
+    box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.01);
+  }
+  100% {
+    box-shadow: 0 0 0 2000px rgba(0, 0, 0, 0);
+  }
+}
