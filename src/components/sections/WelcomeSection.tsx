@@ -9,7 +9,7 @@ const height = 600
 const TypedTag = lazy(() => import('../TypedTag'))
 
 export default function WelcomeSection() {
-  const titleBoxWidth = useBreakpointValue({ base: 370, md: 670 })
+  const titleBoxWidth = useBreakpointValue({ base: 375, md: 670 })
 
   return (
     <Box position="relative" height={height} zIndex={1}>

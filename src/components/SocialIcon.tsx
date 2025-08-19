@@ -33,6 +33,6 @@ const socialDictionary: { [key in SocialSite]: SocialSiteOption } = {
   linkedin: {
     iconUrl: 'linkedin.png',
     title: 'LinkedIn',
-    url: 'https://www.linkedin.com/in/grant-lonie-93ab1340/',
+    url: 'https://www.linkedin.com/in/grantlonie/',
   },
 }
