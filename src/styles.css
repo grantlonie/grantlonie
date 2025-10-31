@@ -152,6 +152,6 @@ body {
     box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.01);
   }
   100% {
-    box-shadow: 0 0 0 2000px rgba(0, 0, 0, 0);
+    box-shadow: 0 0 10000px 5000px rgba(0, 0, 0, 0);
   }
 }

@@ -1,6 +1,7 @@
 export { default as AboutSection } from './AboutSection'
 export { default as ContactSection } from './ContactSection'
 export { default as FooterSection } from './FooterSection'
+export { default as MethodologiesSection } from './MethodologiesSection'
 export { default as OfferingsSection } from './OfferingsSection'
 export { default as PortfolioSection } from './PortfolioSection'
 export { default as WelcomeSection } from './WelcomeSection'

@@ -4,6 +4,7 @@ import {
   AboutSection,
   ContactSection,
   FooterSection,
+  MethodologiesSection,
   OfferingsSection,
   PortfolioSection,
   WelcomeSection,
@@ -22,6 +23,10 @@ export default function Home() {
 
       <Container sx={{ color: 'black', maxW: '5xl', mt: '200px' }}>
         <OfferingsSection />
+      </Container>
+
+      <Container sx={{ color: 'black', maxW: '5xl', mt: '200px' }}>
+        <MethodologiesSection />
       </Container>
 
       <PortfolioSection />

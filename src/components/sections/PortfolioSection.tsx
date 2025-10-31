@@ -40,7 +40,7 @@ export default function PortfolioSection() {
       <Container sx={{ color: 'black', maxW: '5xl', mt: '200px' }}>
         <SectionHeader
           title="Portfolio"
-          description="Sometimes you have to see it to believe it. Grab a coffee, get cozy, and dive in."
+          description="Don't just read about potential — witness the power in action. Each of the following case studies highlights the challenges faced, the innovative strategies employed, and the tangible results achieved."
         />
       </Container>
 

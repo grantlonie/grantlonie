@@ -60,7 +60,7 @@ export default function WelcomeSection() {
               Grant Lonie
             </Heading>
 
-            <Box width="360px">
+            <Box width="370px">
               {isSSR ? (
                 <StaticTag />
               ) : (
