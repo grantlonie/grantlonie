@@ -2,10 +2,10 @@ import { baseTheme, extendTheme } from '@chakra-ui/react'
 
 const theme = {
   colors: {
-    primary: '#ff9f56ff',
-    background: '#EEEEEE',
+    primary: '#2D7DFF',
+    background: '#0A1A36',
     black: '#222831',
-    white: '#ffeec7ff',
+    white: '#C1CFE8',
   },
 }
 

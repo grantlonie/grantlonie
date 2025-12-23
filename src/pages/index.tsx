@@ -1,4 +1,5 @@
 import { Box, Container, useBreakpointValue } from '@chakra-ui/react'
+import FloatingLines from '../components/FloatingLines'
 import SEO from '../components/SEO'
 import {
   AboutSection,
@@ -19,13 +20,27 @@ export default function Home() {
 
   return (
     <Box sx={{ background: 'background', height: '100%', overflow: 'hidden' }}>
-      <WelcomeSection />
+      <Box sx={{ position: 'absolute', height: '1100px', width: '100%' }}>
+        <FloatingLines />
+        <Box
+          position="absolute"
+          bottom="0"
+          left="0"
+          right="0"
+          height="400px"
+          background="linear-gradient(180deg, rgba(2, 8, 23, 0) 0%, #0A1A36 100%)"
+        />
+      </Box>
 
-      <Container sx={{ color: 'black', maxW: '5xl', mt: '200px' }}>
+      <Container sx={{ color: 'white', maxW: '5xl', mt: '200px' }}>
+        <WelcomeSection />
+      </Container>
+
+      <Container position="relative" sx={{ color: 'white', maxW: '5xl', mt: '400px' }}>
         <OfferingsSection />
       </Container>
 
-      <Container sx={{ color: 'black', maxW: '5xl', mt: '200px' }}>
+      <Container sx={{ color: 'white', maxW: '5xl', mt: '400px' }}>
         <MethodologiesSection />
       </Container>
 
@@ -34,8 +49,9 @@ export default function Home() {
       <Box sx={{ overflow: 'hidden', position: 'relative', height }}>
         <Box
           sx={{
-            bgGradient: 'radial(#393E46 0%, #5c6575ff 80%, #717b8cff 100%)',
-            boxShadow: '0px 0px 3px 3px rgba(0,0,0,0.49)',
+            bgGradient:
+              'linear-gradient(135deg, rgba(36, 43, 66, 0.5) 0%, rgba(52, 72, 120, 0.3) 100%)',
+            boxShadow: '0px 0px 6px 6px rgba(255, 255, 255, 0.2)',
             color: 'white',
             height: height - 2 * angleAdj,
             ml: `-${leftAdj}px`,

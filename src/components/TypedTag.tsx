@@ -10,7 +10,7 @@ export default function TypedTag() {
       wrapper="div"
       cursor={true}
       repeat={Infinity}
-      style={{ color: theme.colors.white, fontSize: '1.5em' }}
+      style={{ color: theme.colors.primary, fontSize: '1.5em' }}
     />
   )
 }

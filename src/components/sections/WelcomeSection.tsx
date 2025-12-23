@@ -1,82 +1,87 @@
-import { Box, Button, Flex, Heading, Image, useBreakpointValue } from '@chakra-ui/react'
-import { Suspense, lazy } from 'react'
+import { Box, Button, Flex, Heading, Image } from '@chakra-ui/react'
+import { lazy, Suspense } from 'react'
 import '../../styles.css'
-import { isSSR, rotateAngle } from '../../utils'
-import PowerIcon from '../PowerIcon'
-
-const height = 600
+import { isSSR } from '../../utils'
+import { Share } from '../icons'
 
 const TypedTag = lazy(() => import('../TypedTag'))
 
 export default function WelcomeSection() {
-  const titleBoxWidth = useBreakpointValue({ base: 375, md: 670 })
-
   return (
-    <Box position="relative" height={height} zIndex={1}>
-      <Box
-        height={height}
-        overflow="hidden"
-        bgGradient="radial(#393E46 0%, #5c6575ff 80%, #717b8cff 100%)"
-        transform={`rotate3d(0, 0, 1, ${360 - rotateAngle}deg)`}
-        width="115%"
-        position="relative"
-        transformOrigin="bottom left"
-        boxShadow="0px 0px 3px 3px rgba(0,0,0,0.49)"
-      >
-        <ul className="circles">
-          {new Array(10).fill(0).map((_, i) => (
-            <PowerIcon key={i} />
-          ))}
-        </ul>
-      </Box>
-      <Box
-        sx={{
-          position: 'absolute',
-          left: `calc(50% - ${titleBoxWidth / 2}px)`,
-          top: 100,
-          width: titleBoxWidth,
-          color: 'white',
-        }}
-      >
-        <Flex alignItems="center" flexDirection={{ base: 'column', md: 'row' }} gap={10}>
-          <Flex
-            align="center"
-            justify="center"
-            borderRadius="2xl"
-            backgroundColor="background"
-            overflow="hidden"
-            boxShadow="inset 0px 0px 3px 3px rgba(0,0,0,0.49)"
-          >
-            <Image src="mug-shot.png" alt="Grant Lonie" width="250px" />
-          </Flex>
-
-          <Flex
-            alignItems={{ base: 'center', md: 'flex-start' }}
-            direction="column"
-            gap={5}
-            flex={1}
-          >
-            <Heading as="h1" size="3xl">
-              Grant Lonie
-            </Heading>
-
-            <Box width="370px">
-              {isSSR ? (
-                <StaticTag />
-              ) : (
-                <Suspense fallback={<StaticTag />}>
-                  <TypedTag />
-                </Suspense>
-              )}
-            </Box>
-
-            <Button color="inherit" variant="outline" onClick={handleGoToContact}>
-              Reach out 👋
-            </Button>
-          </Flex>
+    <Flex
+      direction={{ base: 'column', lg: 'row' }}
+      justifyContent={{ base: 'center', lg: 'space-between' }}
+      alignItems={{ base: 'center', lg: 'flex-end' }}
+      gap={8}
+    >
+      <Flex direction={{ base: 'column', lg: 'row' }} alignItems="center" gap={8}>
+        <Flex
+          align="center"
+          justify="center"
+          borderRadius="2xl"
+          backgroundColor="background"
+          overflow="hidden"
+          zIndex={1}
+          borderColor="primary"
+          borderWidth="1px"
+        >
+          <Image src="mug-shot.png" alt="Grant Lonie" width="200px" />
         </Flex>
-      </Box>
-    </Box>
+
+        <Flex direction="column" gap={4}>
+          <Box
+            bg="rgba(255, 255, 255, 0.2)"
+            borderColor="primary"
+            borderWidth="1px"
+            px={4}
+            py={1}
+            borderRadius="full"
+            fontSize="sm"
+            fontWeight="medium"
+            color="rgba(255, 255, 255, 0.8)"
+            width="fit-content"
+            zIndex={1}
+          >
+            PROFESSIONAL SERVICES
+          </Box>
+
+          <Heading
+            color="white"
+            fontFamily="Krona One"
+            as="h1"
+            fontSize={{ base: '4xl', lg: '5xl' }}
+            zIndex={1}
+          >
+            GRANT LONIE
+          </Heading>
+
+          <Box width="390px" zIndex={1}>
+            {isSSR ? (
+              <StaticTag />
+            ) : (
+              <Suspense fallback={<StaticTag />}>
+                <TypedTag />
+              </Suspense>
+            )}
+          </Box>
+        </Flex>
+      </Flex>
+
+      <Button
+        bg="blue.500"
+        color="white"
+        px={8}
+        py={6}
+        borderRadius="xl"
+        fontSize="lg"
+        fontWeight="medium"
+        _hover={{ bg: 'blue.600' }}
+        rightIcon={<Share />}
+        onClick={handleGoToContact}
+      >
+        Get in Touch
+      </Button>
+    </Flex>
   )
 }
 

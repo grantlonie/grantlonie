@@ -34,6 +34,13 @@ export default function SEO({ children }: { children?: any }) {
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:site" content="@GeeDollaHolla"></meta>
 
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Krona+One&display=swap"
+        rel="stylesheet"
+      />
+
       <Script async src={`https://www.googletagmanager.com/gtag/js?id=${googleTagId}`} />
       <Script id="google-analytics">{analyticsScript}</Script>
 

@@ -10,7 +10,7 @@ export default function SocialIcon({ value }: Props) {
   return (
     <Tooltip placement="top" label={title}>
       <a href={url} target="_blank">
-        <Image src={iconUrl} alt={`${title} social icon`} sx={{ height: '40px' }} />
+        <Image src={iconUrl} alt={`${title} social icon`} sx={{ height: '40px', filter: 'invert(1)' }} />
       </a>
     </Tooltip>
   )

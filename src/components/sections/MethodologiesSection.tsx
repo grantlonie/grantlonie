@@ -184,6 +184,7 @@ function MethodologyCard({ title, image, description }: MethodologyCardProps) {
         <Image
           src={image}
           alt={title}
+          filter="sepia(29%) saturate(289%) brightness(86%) hue-rotate(204deg)"
           sx={{
             width: '100%',
             height: 'auto',
@@ -195,7 +196,7 @@ function MethodologyCard({ title, image, description }: MethodologyCardProps) {
         <Text fontSize="xl" fontWeight="bold" color="primary" mb={4}>
           {title}
         </Text>
-        <Box fontSize="md" color="gray.600">
+        <Box fontSize="md" color="white">
           {description}
         </Box>
       </Box>

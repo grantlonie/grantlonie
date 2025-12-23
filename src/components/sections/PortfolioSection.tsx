@@ -37,7 +37,7 @@ export default function PortfolioSection() {
 
   return (
     <>
-      <Container sx={{ color: 'black', maxW: '5xl', mt: '200px' }}>
+      <Container sx={{ color: 'white', maxW: '5xl', mt: '200px' }}>
         <SectionHeader
           title="Portfolio"
           description="Don't just read about potential — witness the power in action. Each of the following case studies highlights the challenges faced, the innovative strategies employed, and the tangible results achieved."
@@ -46,7 +46,7 @@ export default function PortfolioSection() {
 
       <Container
         ref={swiperRef}
-        sx={{ color: 'black', p: 0, maxW: '8xl', borderRadius: '3xl', overflow: 'hidden' }}
+        sx={{ color: 'white', p: 0, maxW: '8xl', borderRadius: '3xl', overflow: 'hidden' }}
       >
         <motion.div animate={controls} initial="hidden" variants={containerAnimationVariants}>
           <Swiper
@@ -61,7 +61,7 @@ export default function PortfolioSection() {
               <Box
                 key={i}
                 onClick={() => setSelected(p)}
-                sx={{ cursor: 'pointer', height: '440px', width: '335px' }}
+                sx={{ cursor: 'pointer', height: '470px', width: '350px' }}
               >
                 <motion.div variants={defaultVariants}>
                   <PortfolioItem item={p} />
@@ -125,13 +125,13 @@ function Overlay({ actionClass, methods }: SwiperOverlayProps) {
 function NavButton({ sx, ...rest }: BoxProps) {
   const theme = useTheme()
   //@ts-ignore
-  const black = theme.colors.black
+  const white = theme.colors.white
   return (
     <Box
       as="button"
       aria-label="swipe right"
       sx={{
-        color: 'black',
+        color: 'white',
         height: '100%',
         px: 4,
         _hover: { backgroundColor: 'white' },
@@ -139,7 +139,7 @@ function NavButton({ sx, ...rest }: BoxProps) {
       }}
       {...rest}
     >
-      <RightArrow fill={black} />
+      <RightArrow fill={white} />
     </Box>
   )
 }

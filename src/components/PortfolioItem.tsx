@@ -14,13 +14,16 @@ export default function PortfolioItem({ item }: Props) {
   return (
     <Card
       sx={{
-        background: 'white',
-        color: 'black',
+        background:
+          'linear-gradient(135deg, rgba(36, 43, 66, 0.5) 0%, rgba(52, 72, 120, 0.3) 100%)',
+        borderColor: 'primary',
+        borderWidth: '1px',
+        color: 'white',
         my: 2,
       }}
     >
       <CardHeader>
-        <Flex flex="1" gap="4" alignItems="center" flexWrap="wrap">
+        <Flex flex="1" gap="4" alignItems="center">
           <Image alt={title} src={iconUrl} sx={{ height: '40px' }} />
           <Heading>{title}</Heading>
         </Flex>

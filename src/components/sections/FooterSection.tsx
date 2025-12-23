@@ -17,8 +17,9 @@ export default function FooterSection() {
         <SocialIcon value="github" />
         <SocialIcon value="linkedin" />
       </Box>
-      <Text fontSize="2xl">Grant Lonie</Text>
-      <Text>Made with ❤️ by Gatsby</Text>
+      <Text color="white" fontSize="2xl">
+        Grant Lonie
+      </Text>
     </Box>
   )
 }

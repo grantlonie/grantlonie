@@ -85,7 +85,7 @@ export default function ProfessionalHistory() {
         sx={{
           display: { base: 'none', md: 'inherit' },
           width: '1px',
-          background: 'black',
+          background: 'white',
         }}
       />
 
