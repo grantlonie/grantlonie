@@ -1,6 +1,7 @@
 import { Box, Container, useBreakpointValue } from '@chakra-ui/react'
 import FloatingLines from '../components/FloatingLines'
 import SEO from '../components/SEO'
+import TopBar from '../components/TopBar'
 import {
   AboutSection,
   ContactSection,
@@ -20,6 +21,7 @@ export default function Home() {
 
   return (
     <Box sx={{ background: 'background', height: '100%', overflow: 'hidden' }}>
+      <TopBar />
       <Box sx={{ position: 'absolute', height: '1100px', width: '100%' }}>
         <FloatingLines />
         <Box
@@ -36,15 +38,17 @@ export default function Home() {
         <WelcomeSection />
       </Container>
 
-      <Container position="relative" sx={{ color: 'white', maxW: '5xl', mt: '400px' }}>
+      <Container position="relative" sx={{ color: 'white', maxW: '5xl', mt: '400px' }} data-section="services">
         <OfferingsSection />
       </Container>
 
-      <Container sx={{ color: 'white', maxW: '5xl', mt: '400px' }}>
+      <Container sx={{ color: 'white', maxW: '5xl', mt: '400px' }} data-section="methodologies">
         <MethodologiesSection />
       </Container>
 
-      <PortfolioSection />
+      <Box data-section="portfolio">
+        <PortfolioSection />
+      </Box>
 
       <Box sx={{ overflow: 'hidden', position: 'relative', height }}>
         <Box
@@ -64,10 +68,10 @@ export default function Home() {
           }}
         />
         <Box sx={{ color: 'white', mt: angleAdj, position: 'absolute', width: '100%' }}>
-          <Container sx={{ maxW: '5xl', mt: '200px' }}>
+          <Container sx={{ maxW: '5xl', mt: '200px' }} data-section="about">
             <AboutSection />
           </Container>
-          <Container sx={{ maxW: '5xl', mt: '200px' }}>
+          <Container sx={{ maxW: '5xl', mt: '200px' }} data-section="contact">
             <ContactSection />
           </Container>
         </Box>
