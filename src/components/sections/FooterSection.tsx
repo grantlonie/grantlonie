@@ -18,7 +18,7 @@ export default function FooterSection() {
         <SocialIcon value="linkedin" />
       </Box>
       <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end' }}>
-        <Text color="white" fontSize="2xl">
+        <Text color="white" fontSize="lg">
           © 2026 Grant Lonie
         </Text>
         <Text color="white" fontSize="sm">
